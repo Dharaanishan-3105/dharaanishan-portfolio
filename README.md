@@ -1,12 +1,13 @@
-# Dharaanishan S - AI & Data Science Portfolio  
-Hello everyone!  
-This is my personal portfolio website showcasing my AI, Machine Learning, and Data Science projects and skills.  
+# Dharaanishan S - Data Analyst Portfolio  
+Welcome to my professional portfolio!  
+This is my personal portfolio website showcasing my Data Science, AI, Machine Learning projects and technical skills.  
 
 **About Me:**  
 - B.Tech AI & Data Science Student at Indra Ganesan College of Engineering  
 - Current CGPA: 8.32  
-- 50+ Certificates in AI, ML, and Web Development  
+- 20+ Professional Certificates in AI, ML, and Web Development  
 - Winner of multiple hackathons and project competitions  
+- Specialized in Data Analysis, Machine Learning, and Business Intelligence  
 
 **Tech Stack used:**  
 - ReactJS  
@@ -19,7 +20,9 @@ This is my personal portfolio website showcasing my AI, Machine Learning, and Da
 - SweetAlert2  
 
 **Website Link:**  
-[Your Website URL Here]  
+🚀 [Live Portfolio](https://your-portfolio.vercel.app) - Coming Soon!  
+📧 **Contact:** studentdharaan@gmail.com  
+🔗 **LinkedIn:** [Dharaanishan Selvendran](https://www.linkedin.com/in/dharaanishan-selvendran-4d312005)  
 
 Feel free to use this project as inspiration for your own portfolio. Please include credit when using it. Thank you! 🙏  
 
