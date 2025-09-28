@@ -104,6 +104,25 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
 
           <div className="relative min-h-screen flex items-center justify-center px-4">
             <div className="w-full max-w-4xl mx-auto">
+              {/* Logo */}
+              <motion.div
+                className="flex justify-center mb-6 sm:mb-8 md:mb-12"
+                variants={childVariants}
+                data-aos="zoom-in"
+                data-aos-delay="200"
+              >
+                <div className="relative group">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition duration-300" />
+                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 flex items-center justify-center">
+                    <img 
+                      src="/logo.png" 
+                      alt="Dharaanishan S Logo" 
+                      className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+
               {/* Icons */}
               <motion.div
                 className="flex justify-center gap-3 sm:gap-4 md:gap-8 mb-6 sm:mb-8 md:mb-12"
@@ -113,7 +132,7 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
                   <div
                     key={index}
                     data-aos="fade-down"
-                    data-aos-delay={index * 200}
+                    data-aos-delay={index * 200 + 400}
                   >
                     <IconButton Icon={Icon} />
                   </div>

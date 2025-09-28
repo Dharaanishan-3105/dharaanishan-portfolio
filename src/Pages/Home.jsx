@@ -146,7 +146,7 @@ const Home = () => {
     return () => clearTimeout(timeout);
   }, [handleTyping]);
 
-  // Data Science Animation Component - Restored Original Working Version
+  // Data Science Animation Component - Beautiful Design Matching Image
   const DataScienceAnimation = () => (
     <div className="relative w-full h-full flex items-center justify-center">
       {/* Main Monitor */}
@@ -161,6 +161,13 @@ const Home = () => {
               <div className="h-2 bg-green-400 rounded w-1/2 animate-pulse" style={{animationDelay: '0.1s'}}></div>
               <div className="h-2 bg-purple-400 rounded w-2/3 animate-pulse" style={{animationDelay: '0.2s'}}></div>
               <div className="h-2 bg-yellow-400 rounded w-1/3 animate-pulse" style={{animationDelay: '0.3s'}}></div>
+            </div>
+            
+            {/* Code Icon */}
+            <div className="absolute bottom-4 left-4">
+              <div className="w-8 h-6 bg-green-500 rounded flex items-center justify-center">
+                <span className="text-white text-xs font-bold">&lt;/&gt;</span>
+              </div>
             </div>
             
             {/* Data Visualization */}
@@ -193,6 +200,19 @@ const Home = () => {
           <div className="absolute -top-2 left-2 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
           <div className="absolute -top-2 right-2 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
           <div className="absolute -bottom-1 left-4 w-8 h-4 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+          {/* Arrow pointing down */}
+          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
+            <div className="w-0 h-0 border-l-2 border-r-2 border-t-4 border-transparent border-t-blue-400"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Data List Icon */}
+      <div className="absolute top-16 left-4" style={{animation: 'float 3.5s ease-in-out infinite 1s'}}>
+        <div className="w-12 h-8 bg-gradient-to-r from-blue-400 to-purple-400 rounded flex flex-col justify-between p-1">
+          <div className="w-full h-1 bg-white rounded"></div>
+          <div className="w-full h-1 bg-white rounded"></div>
+          <div className="w-full h-1 bg-white rounded"></div>
         </div>
       </div>
 
@@ -217,6 +237,12 @@ const Home = () => {
           <div className="w-2 h-3 bg-white rounded"></div>
           <div className="w-2 h-5 bg-white rounded"></div>
         </div>
+      </div>
+
+      {/* Background Gears */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-1/4 left-1/4 w-16 h-16 border-2 border-gray-500 rounded-full" style={{animation: 'spin 12s linear infinite'}}></div>
+        <div className="absolute bottom-1/4 right-1/4 w-12 h-12 border-2 border-gray-500 rounded-full" style={{animation: 'spin 10s linear infinite reverse'}}></div>
       </div>
     </div>
   );
