@@ -484,7 +484,7 @@ const AboutPage = () => {
       {
         icon: UserCheck,
         color: "from-[#6366f1] to-[#a855f7]",
-        value: 2,
+        value: "★",
         label: "Experience & Achievements",
         description: "Professional journey & awards",
         animation: "fade-left",
