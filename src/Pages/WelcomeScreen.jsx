@@ -112,14 +112,35 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
                 data-aos-delay="200"
               >
                 <div className="relative group">
-                  <div className="absolute -inset-4 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition duration-300" />
-                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 flex items-center justify-center">
+                  {/* Glowing Background */}
+                  <div className="absolute -inset-8 bg-gradient-to-r from-indigo-600/40 via-purple-600/40 to-pink-600/40 rounded-full blur-2xl opacity-70 animate-pulse"></div>
+                  
+                  {/* Logo Container - Circular */}
+                  <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-sm rounded-full border-2 border-white/30 flex items-center justify-center shadow-2xl overflow-hidden">
+                    {/* Inner Glow */}
+                    <div className="absolute inset-3 bg-gradient-to-br from-indigo-500/30 to-purple-500/30 rounded-full blur-sm"></div>
+                    
+                    {/* Logo Image - Circular */}
                     <img 
                       src="/logo.png" 
                       alt="Dharaanishan S Logo" 
-                      className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain"
+                      className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 object-cover rounded-full z-10 border-2 border-white/20"
                     />
+                    
+                    {/* Rotating Ring */}
+                    <div className="absolute inset-0 border-2 border-transparent rounded-full" 
+                         style={{
+                           background: 'conic-gradient(from 0deg, transparent, rgba(99, 102, 241, 0.5), rgba(168, 85, 247, 0.5), transparent)',
+                           animation: 'spin 8s linear infinite'
+                         }}>
+                    </div>
                   </div>
+                  
+                  {/* Floating Particles */}
+                  <div className="absolute -top-3 -right-3 w-4 h-4 bg-indigo-400 rounded-full animate-bounce opacity-70"></div>
+                  <div className="absolute -bottom-3 -left-3 w-3 h-3 bg-purple-400 rounded-full animate-bounce opacity-70" style={{animationDelay: '0.5s'}}></div>
+                  <div className="absolute top-1/2 -left-5 w-3 h-3 bg-pink-400 rounded-full animate-bounce opacity-70" style={{animationDelay: '1s'}}></div>
+                  <div className="absolute top-1/2 -right-5 w-3 h-3 bg-blue-400 rounded-full animate-bounce opacity-70" style={{animationDelay: '1.5s'}}></div>
                 </div>
               </motion.div>
 

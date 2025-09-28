@@ -46,68 +46,49 @@ const Header = memo(() => (
 const ProfileImage = memo(() => (
   <div className="flex justify-end items-center sm:p-12 sm:py-0 sm:pb-0 p-0 py-2 pb-2">
     <div className="relative group" data-aos="fade-up" data-aos-duration="1000">
-      {/* Optimized gradient backgrounds with reduced complexity for mobile */}
-      <div className="absolute -inset-6 opacity-[25%] z-0 hidden sm:block">
-        <div className="absolute inset-0 bg-gradient-to-r from-violet-600 via-indigo-500 to-purple-600 rounded-full blur-2xl animate-spin-slower" />
-        <div className="absolute inset-0 bg-gradient-to-l from-fuchsia-500 via-rose-500 to-pink-600 rounded-full blur-2xl animate-pulse-slow opacity-50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-blue-600 via-cyan-500 to-teal-400 rounded-full blur-2xl animate-float opacity-50" />
-      </div>
+      {/* Professional Profile Frame - Clean & Elegant */}
       <div className="relative">
-        <div className="w-72 h-72 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-[0_0_40px_rgba(120,119,198,0.3)] transform transition-all duration-700 group-hover:scale-105">
-          <div className="absolute inset-0 border-4 border-white/20 rounded-full z-20 transition-all duration-700 group-hover:border-white/40 group-hover:scale-105" />
-
-          {/* Optimized overlay effects - disabled on mobile */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 z-10 transition-opacity duration-700 group-hover:opacity-0 hidden sm:block" />
-          <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block" />
-
-          {/* 
-            GOOGLE DRIVE CORS ISSUE FIX:
-            Replace the src below with one of these alternatives:
-            
-            1. IMGUR (Recommended):
-               - Go to https://imgur.com
-               - Upload your image
-               - Right-click image → "Copy image address"
-               - Replace src with: "https://i.imgur.com/YOUR_IMAGE_ID.jpg"
-            
-            2. CLOUDINARY (Professional):
-               - Go to https://cloudinary.com
-               - Upload your image
-               - Copy the URL
-               - Replace src with the Cloudinary URL
-            
-            3. GITHUB (Free):
-               - Upload to your GitHub repository
-               - Use: "https://raw.githubusercontent.com/USERNAME/REPO/main/path/to/image.jpg"
-            
-            4. DIRECT FILE (If hosting locally):
-               - Put image in public folder
-               - Use: "/your-image.jpg"
-          */}
-          <img 
-            src="/Dharaanishan.jpg" 
-            alt="Dharaanishan S - AI & Data Science Professional"
-            className="w-full h-full object-cover rounded-full"
-            onLoad={(e) => {
-              console.log('✅ Profile image loaded successfully');
-              e.target.nextSibling.style.display = 'none';
-            }}
-            onError={(e) => {
-              console.log('❌ Image failed to load, showing fallback');
-              e.target.style.display = 'none';
-              e.target.nextSibling.style.display = 'flex';
-            }}
-          />
-          <div className="w-full h-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-4xl font-bold" style={{display: 'none'}}>
-            DS
+        {/* Subtle Background Glow - Away from face */}
+        <div className="absolute -inset-8 bg-gradient-to-r from-cyan-400/20 via-blue-500/20 to-purple-600/20 rounded-full blur-2xl opacity-60"></div>
+        
+        {/* Main Profile Container */}
+        <div className="relative w-80 h-80 sm:w-96 sm:h-96">
+          {/* Professional Border Ring */}
+          <div className="absolute inset-0 rounded-full p-1 bg-gradient-to-r from-cyan-400 to-blue-500">
+            <div className="w-full h-full bg-gray-900 rounded-full overflow-hidden">
+              <img 
+                src="/Dharaanishan.jpg" 
+                alt="Dharaanishan S - AI & Data Science Professional"
+                className="w-full h-full object-cover"
+                onLoad={(e) => {
+                  console.log('✅ Profile image loaded successfully');
+                  e.target.nextSibling.style.display = 'none';
+                }}
+                onError={(e) => {
+                  console.log('❌ Image failed to load, showing fallback');
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'flex';
+                }}
+              />
+              <div className="w-full h-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-4xl font-bold" style={{display: 'none'}}>
+                DS
+              </div>
+            </div>
           </div>
-
-          {/* Advanced hover effects - desktop only */}
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 z-20 hidden sm:block">
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-            <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-white/10 to-transparent transform translate-y-full group-hover:-translate-y-full transition-transform duration-1000 delay-100" />
-            <div className="absolute inset-0 rounded-full border-8 border-white/10 scale-0 group-hover:scale-100 transition-transform duration-700 animate-pulse-slow" />
-          </div>
+          
+          {/* Subtle Background Elements - Positioned away from face */}
+          <div className="absolute -top-12 -right-12 w-4 h-4 bg-cyan-400/40 rounded-full animate-pulse"></div>
+          <div className="absolute -bottom-12 -left-12 w-3 h-3 bg-blue-500/40 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/4 -left-16 w-2 h-2 bg-purple-500/40 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute bottom-1/4 -right-16 w-2 h-2 bg-cyan-300/40 rounded-full animate-pulse" style={{animationDelay: '3s'}}></div>
+        </div>
+        
+        {/* Elegant Rotating Ring - Subtle */}
+        <div className="absolute inset-0 border border-transparent rounded-full" 
+             style={{
+               background: 'conic-gradient(from 0deg, transparent, rgba(6, 182, 212, 0.3), rgba(59, 130, 246, 0.3), transparent)',
+               animation: 'spin 12s linear infinite'
+             }}>
         </div>
       </div>
     </div>

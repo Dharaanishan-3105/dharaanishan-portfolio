@@ -9,6 +9,7 @@ import {
 // Removed Lottie import - using CSS animations instead
 import AOS from "aos";
 import "aos/dist/aos.css";
+import SocialPreview from "../components/SocialPreview";
 
 // Memoized Components
 
@@ -69,15 +70,13 @@ const CTAButton = memo(({ href, text, icon: Icon }) => (
   </a>
 ));
 
-const SocialLink = memo(({ icon: Icon, link }) => (
-  <a href={link} target="_blank" rel="noopener noreferrer">
-    <button className="group relative p-3">
+const SocialLink = memo(({ icon: Icon, platform, onClick }) => (
+  <button onClick={() => onClick(platform)} className="group relative p-3">
       <div className="absolute inset-0 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
       <div className="relative rounded-xl bg-black/50 backdrop-blur-xl p-2 flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-all duration-300">
         <Icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
       </div>
     </button>
-  </a>
 ));
 
 // Constants
@@ -87,17 +86,22 @@ const PAUSE_DURATION = 2000;
 const WORDS = ["AI & Data Science Student", "AI/ML/DS Enthusiast"];
 const TECH_STACK = ["Python", "Artificial Intelligence", "Machine Learning", "Deep Learning", "PostgreSQL"];
 const SOCIAL_LINKS = [
-  { icon: Github, link: "https://github.com/Dharaanishan-3105" },
-  { icon: Linkedin, link: "https://www.linkedin.com/in/dharaanishan-selvendran-4d312005" },
+  { icon: Github, platform: "github" },
+  { icon: Linkedin, platform: "linkedin" },
 ];
 
 const Home = () => {
   const [text, setText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
+  const [previewPlatform, setPreviewPlatform] = useState(null);
   const [wordIndex, setWordIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+
+  const handleSocialClick = (platform) => {
+    setPreviewPlatform(platform);
+  };
 
   // Optimize AOS initialization
   useEffect(() => {
@@ -146,13 +150,13 @@ const Home = () => {
     return () => clearTimeout(timeout);
   }, [handleTyping]);
 
-  // Data Science Animation Component - Beautiful Design Matching Image
+  // Data Science Animation Component - Professional System Structure
   const DataScienceAnimation = () => (
     <div className="relative w-full h-full flex items-center justify-center">
-      {/* Main Monitor */}
-      <div className="relative">
+      {/* Main Monitor - Central Element */}
+      <div className="relative z-10">
         {/* Monitor Screen */}
-        <div className="w-64 h-40 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg border-4 border-gray-600 shadow-2xl">
+        <div className="w-72 h-44 bg-gradient-to-br from-slate-700 to-slate-800 rounded-lg border-4 border-slate-600 shadow-2xl">
           {/* Screen Content */}
           <div className="w-full h-full p-4">
             {/* Code Lines */}
@@ -163,14 +167,14 @@ const Home = () => {
               <div className="h-2 bg-yellow-400 rounded w-1/3 animate-pulse" style={{animationDelay: '0.3s'}}></div>
             </div>
             
-            {/* Code Icon */}
+            {/* Code Icon - Bottom Left */}
             <div className="absolute bottom-4 left-4">
               <div className="w-8 h-6 bg-green-500 rounded flex items-center justify-center">
                 <span className="text-white text-xs font-bold">&lt;/&gt;</span>
               </div>
             </div>
             
-            {/* Data Visualization */}
+            {/* Data Visualization - Bottom Right */}
             <div className="absolute bottom-4 right-4">
               <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-bounce"></div>
             </div>
@@ -178,28 +182,27 @@ const Home = () => {
         </div>
         
         {/* Monitor Stand */}
-        <div className="w-32 h-4 bg-gray-600 mx-auto mt-2 rounded"></div>
-        <div className="w-20 h-8 bg-gray-700 mx-auto mt-1 rounded"></div>
+        <div className="w-36 h-4 bg-slate-600 mx-auto mt-2 rounded"></div>
+        <div className="w-24 h-8 bg-slate-700 mx-auto mt-1 rounded"></div>
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute top-8 right-8">
-        {/* Phone */}
-        <div className="w-12 h-20 bg-gradient-to-br from-gray-700 to-gray-800 rounded-lg border-2 border-gray-500 shadow-lg" style={{animation: 'float 3s ease-in-out infinite'}}>
+      {/* Phone - Top Right */}
+      <div className="absolute top-8 right-8 z-20 animate-float">
+        <div className="w-14 h-24 bg-gradient-to-br from-slate-600 to-slate-700 rounded-lg border-2 border-slate-500 shadow-lg">
           <div className="w-full h-full p-2">
-            <div className="w-8 h-8 bg-green-500 rounded-full mx-auto mt-2 flex items-center justify-center">
+            <div className="w-8 h-8 bg-green-500 rounded-full mx-auto mt-3 flex items-center justify-center">
               <div className="w-4 h-4 bg-white rounded-full"></div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Cloud Icon */}
-      <div className="absolute top-4 left-8" style={{animation: 'float 4s ease-in-out infinite 0.5s'}}>
-        <div className="w-16 h-10 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full relative">
+      {/* Cloud Icon - Top Left */}
+      <div className="absolute top-4 left-8 z-20 animate-float-delayed">
+        <div className="w-18 h-12 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full relative">
           <div className="absolute -top-2 left-2 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
           <div className="absolute -top-2 right-2 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
-          <div className="absolute -bottom-1 left-4 w-8 h-4 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+          <div className="absolute -bottom-1 left-4 w-10 h-5 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
           {/* Arrow pointing down */}
           <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
             <div className="w-0 h-0 border-l-2 border-r-2 border-t-4 border-transparent border-t-blue-400"></div>
@@ -207,31 +210,31 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Data List Icon */}
-      <div className="absolute top-16 left-4" style={{animation: 'float 3.5s ease-in-out infinite 1s'}}>
-        <div className="w-12 h-8 bg-gradient-to-r from-blue-400 to-purple-400 rounded flex flex-col justify-between p-1">
+      {/* Data List Icon - Top Center */}
+      <div className="absolute top-16 left-1/2 transform -translate-x-1/2 z-20 animate-float" style={{animationDelay: '1s'}}>
+        <div className="w-14 h-10 bg-gradient-to-r from-blue-400 to-purple-400 rounded flex flex-col justify-between p-1">
           <div className="w-full h-1 bg-white rounded"></div>
           <div className="w-full h-1 bg-white rounded"></div>
           <div className="w-full h-1 bg-white rounded"></div>
         </div>
       </div>
 
-      {/* Gear Icons */}
-      <div className="absolute bottom-8 left-4" style={{animation: 'spin 8s linear infinite'}}>
-        <div className="w-8 h-8 border-4 border-gray-400 rounded-full flex items-center justify-center">
-          <div className="w-4 h-4 border-2 border-gray-300 rounded-full"></div>
+      {/* Gear Icons - Spinning */}
+      <div className="absolute bottom-8 left-4 z-20 animate-spin-slow">
+        <div className="w-10 h-10 border-4 border-blue-400 rounded-full flex items-center justify-center">
+          <div className="w-5 h-5 border-2 border-blue-300 rounded-full"></div>
         </div>
       </div>
 
-      <div className="absolute top-16 right-16" style={{animation: 'spin 6s linear infinite reverse'}}>
-        <div className="w-6 h-6 border-3 border-gray-400 rounded-full flex items-center justify-center">
-          <div className="w-2 h-2 border border-gray-300 rounded-full"></div>
+      <div className="absolute top-20 right-16 z-20 animate-spin-reverse">
+        <div className="w-8 h-8 border-3 border-purple-400 rounded-full flex items-center justify-center">
+          <div className="w-3 h-3 border border-purple-300 rounded-full"></div>
         </div>
       </div>
 
-      {/* Chart Icon */}
-      <div className="absolute bottom-16 right-4" style={{animation: 'bounce 2s ease-in-out infinite'}}>
-        <div className="w-12 h-8 bg-gradient-to-r from-green-400 to-blue-400 rounded flex items-end justify-between p-1">
+      {/* Chart Icon - Bottom Right */}
+      <div className="absolute bottom-16 right-4 z-20 animate-bounce-slow">
+        <div className="w-14 h-10 bg-gradient-to-r from-green-400 to-blue-400 rounded flex items-end justify-between p-1">
           <div className="w-2 h-4 bg-white rounded"></div>
           <div className="w-2 h-6 bg-white rounded"></div>
           <div className="w-2 h-3 bg-white rounded"></div>
@@ -239,10 +242,18 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Background Gears */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/4 left-1/4 w-16 h-16 border-2 border-gray-500 rounded-full" style={{animation: 'spin 12s linear infinite'}}></div>
-        <div className="absolute bottom-1/4 right-1/4 w-12 h-12 border-2 border-gray-500 rounded-full" style={{animation: 'spin 10s linear infinite reverse'}}></div>
+      {/* Background Gears - Subtle */}
+      <div className="absolute inset-0 opacity-15 z-0">
+        <div className="absolute top-1/4 left-1/4 w-20 h-20 border-2 border-gray-500 rounded-full animate-spin-slow" style={{animationDuration: '12s'}}></div>
+        <div className="absolute bottom-1/4 right-1/4 w-16 h-16 border-2 border-gray-500 rounded-full animate-spin-reverse" style={{animationDuration: '10s'}}></div>
+        <div className="absolute top-1/2 right-1/4 w-12 h-12 border-2 border-gray-500 rounded-full animate-spin-slow" style={{animationDuration: '14s'}}></div>
+      </div>
+
+      {/* Floating Dots */}
+      <div className="absolute inset-0 z-10">
+        <div className="absolute top-1/3 left-1/3 w-2 h-2 bg-blue-400 rounded-full animate-pulse-slow"></div>
+        <div className="absolute top-2/3 right-1/3 w-2 h-2 bg-purple-400 rounded-full animate-pulse-slow" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-1/3 left-2/3 w-2 h-2 bg-green-400 rounded-full animate-pulse-slow" style={{animationDelay: '2s'}}></div>
       </div>
     </div>
   );
@@ -319,7 +330,7 @@ const Home = () => {
                   data-aos-delay="1600"
                 >
                   {SOCIAL_LINKS.map((social, index) => (
-                    <SocialLink key={index} {...social} />
+                    <SocialLink key={index} {...social} onClick={handleSocialClick} />
                   ))}
                 </div>
               </div>
@@ -364,6 +375,13 @@ const Home = () => {
           </div>
         </div>
       </div>
+      
+      {/* Social Preview Modal */}
+      <SocialPreview
+        isOpen={previewPlatform !== null}
+        onClose={() => setPreviewPlatform(null)}
+        platform={previewPlatform}
+      />
     </div>
   );
 };

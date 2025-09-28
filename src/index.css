@@ -212,6 +212,11 @@ body {
   50% { transform: translateY(-5px); }
 }
 
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
@@ -230,4 +235,8 @@ body {
 
 .animate-bounce-slow {
   animation: bounce-slow 2s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
 }
