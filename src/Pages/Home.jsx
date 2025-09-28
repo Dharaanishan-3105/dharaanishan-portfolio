@@ -150,113 +150,6 @@ const Home = () => {
     return () => clearTimeout(timeout);
   }, [handleTyping]);
 
-  // Data Science Animation Component - Professional System Structure
-  const DataScienceAnimation = () => (
-    <div className="relative w-full h-full flex items-center justify-center">
-      {/* Main Monitor - Central Element */}
-      <div className="relative z-10">
-        {/* Monitor Screen */}
-        <div className="w-72 h-44 bg-gradient-to-br from-slate-700 to-slate-800 rounded-lg border-4 border-slate-600 shadow-2xl">
-          {/* Screen Content */}
-          <div className="w-full h-full p-4">
-            {/* Code Lines */}
-            <div className="space-y-2">
-              <div className="h-2 bg-blue-400 rounded w-3/4 animate-pulse"></div>
-              <div className="h-2 bg-green-400 rounded w-1/2 animate-pulse" style={{animationDelay: '0.1s'}}></div>
-              <div className="h-2 bg-purple-400 rounded w-2/3 animate-pulse" style={{animationDelay: '0.2s'}}></div>
-              <div className="h-2 bg-yellow-400 rounded w-1/3 animate-pulse" style={{animationDelay: '0.3s'}}></div>
-            </div>
-            
-            {/* Code Icon - Bottom Left */}
-            <div className="absolute bottom-4 left-4">
-              <div className="w-8 h-6 bg-green-500 rounded flex items-center justify-center">
-                <span className="text-white text-xs font-bold">&lt;/&gt;</span>
-              </div>
-            </div>
-            
-            {/* Data Visualization - Bottom Right */}
-            <div className="absolute bottom-4 right-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-bounce"></div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Monitor Stand */}
-        <div className="w-36 h-4 bg-slate-600 mx-auto mt-2 rounded"></div>
-        <div className="w-24 h-8 bg-slate-700 mx-auto mt-1 rounded"></div>
-      </div>
-
-      {/* Phone - Top Right */}
-      <div className="absolute top-8 right-8 z-20 animate-float">
-        <div className="w-14 h-24 bg-gradient-to-br from-slate-600 to-slate-700 rounded-lg border-2 border-slate-500 shadow-lg">
-          <div className="w-full h-full p-2">
-            <div className="w-8 h-8 bg-green-500 rounded-full mx-auto mt-3 flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-full"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Cloud Icon - Top Left */}
-      <div className="absolute top-4 left-8 z-20 animate-float-delayed">
-        <div className="w-18 h-12 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full relative">
-          <div className="absolute -top-2 left-2 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
-          <div className="absolute -top-2 right-2 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
-          <div className="absolute -bottom-1 left-4 w-10 h-5 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
-          {/* Arrow pointing down */}
-          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
-            <div className="w-0 h-0 border-l-2 border-r-2 border-t-4 border-transparent border-t-blue-400"></div>
-          </div>
-        </div>
-      </div>
-
-      {/* Data List Icon - Top Center */}
-      <div className="absolute top-16 left-1/2 transform -translate-x-1/2 z-20 animate-float" style={{animationDelay: '1s'}}>
-        <div className="w-14 h-10 bg-gradient-to-r from-blue-400 to-purple-400 rounded flex flex-col justify-between p-1">
-          <div className="w-full h-1 bg-white rounded"></div>
-          <div className="w-full h-1 bg-white rounded"></div>
-          <div className="w-full h-1 bg-white rounded"></div>
-        </div>
-      </div>
-
-      {/* Gear Icons - Spinning */}
-      <div className="absolute bottom-8 left-4 z-20 animate-spin-slow">
-        <div className="w-10 h-10 border-4 border-blue-400 rounded-full flex items-center justify-center">
-          <div className="w-5 h-5 border-2 border-blue-300 rounded-full"></div>
-        </div>
-      </div>
-
-      <div className="absolute top-20 right-16 z-20 animate-spin-reverse">
-        <div className="w-8 h-8 border-3 border-purple-400 rounded-full flex items-center justify-center">
-          <div className="w-3 h-3 border border-purple-300 rounded-full"></div>
-        </div>
-      </div>
-
-      {/* Chart Icon - Bottom Right */}
-      <div className="absolute bottom-16 right-4 z-20 animate-bounce-slow">
-        <div className="w-14 h-10 bg-gradient-to-r from-green-400 to-blue-400 rounded flex items-end justify-between p-1">
-          <div className="w-2 h-4 bg-white rounded"></div>
-          <div className="w-2 h-6 bg-white rounded"></div>
-          <div className="w-2 h-3 bg-white rounded"></div>
-          <div className="w-2 h-5 bg-white rounded"></div>
-        </div>
-      </div>
-
-      {/* Background Gears - Subtle */}
-      <div className="absolute inset-0 opacity-15 z-0">
-        <div className="absolute top-1/4 left-1/4 w-20 h-20 border-2 border-gray-500 rounded-full animate-spin-slow" style={{animationDuration: '12s'}}></div>
-        <div className="absolute bottom-1/4 right-1/4 w-16 h-16 border-2 border-gray-500 rounded-full animate-spin-reverse" style={{animationDuration: '10s'}}></div>
-        <div className="absolute top-1/2 right-1/4 w-12 h-12 border-2 border-gray-500 rounded-full animate-spin-slow" style={{animationDuration: '14s'}}></div>
-      </div>
-
-      {/* Floating Dots */}
-      <div className="absolute inset-0 z-10">
-        <div className="absolute top-1/3 left-1/3 w-2 h-2 bg-blue-400 rounded-full animate-pulse-slow"></div>
-        <div className="absolute top-2/3 right-1/3 w-2 h-2 bg-purple-400 rounded-full animate-pulse-slow" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-1/3 left-2/3 w-2 h-2 bg-green-400 rounded-full animate-pulse-slow" style={{animationDelay: '2s'}}></div>
-      </div>
-    </div>
-  );
 
   return (
     <div className="min-h-screen bg-[#030014] overflow-hidden" id="Home">
@@ -344,31 +237,11 @@ const Home = () => {
               data-aos="fade-left"
               data-aos-delay="600"
             >
-              <div className="relative w-full opacity-90">
-                <div
-                  className={`absolute inset-0 bg-gradient-to-r from-[#6366f1]/10 to-[#a855f7]/10 rounded-3xl blur-3xl transition-all duration-700 ease-in-out ${
-                    isHovering ? "opacity-50 scale-105" : "opacity-20 scale-100"
-                  }`}
-                ></div>
-
-                <div
-                  className={`relative z-10 w-full opacity-90 transform transition-transform duration-500 ${
-                    isHovering ? "scale-105" : "scale-100"
-                  }`}
-                >
-                  <DataScienceAnimation />
-                </div>
-
-                <div
-                  className={`absolute inset-0 pointer-events-none transition-all duration-700 ${
-                    isHovering ? "opacity-50" : "opacity-20"
-                  }`}
-                >
-                  <div
-                    className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-br from-indigo-500/10 to-purple-500/10 blur-3xl animate-[pulse_6s_cubic-bezier(0.4,0,0.6,1)_infinite] transition-all duration-700 ${
-                      isHovering ? "scale-110" : "scale-100"
-                    }`}
-                  ></div>
+              <div className="relative w-full flex items-center justify-center">
+                <div className="text-center text-gray-400">
+                  <div className="text-8xl mb-6">💻</div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Data Science & AI</h3>
+                  <p className="text-lg">Building the future with intelligent code</p>
                 </div>
               </div>
             </div>

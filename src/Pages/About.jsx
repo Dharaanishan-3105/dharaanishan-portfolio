@@ -513,7 +513,7 @@ const AboutPage = () => {
             </p>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
-                <a
+              <a
                 href="https://drive.google.com/drive/folders/19c-DoQZKJNRqAGKjx7sxYp50R6QlzYwp"
                 target="_blank"
                 rel="noopener noreferrer"
