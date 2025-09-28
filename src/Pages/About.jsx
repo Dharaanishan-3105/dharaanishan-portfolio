@@ -448,6 +448,18 @@ const AboutPage = () => {
         label: "Major Projects",
         description: "AI & ML solutions implemented",
         animation: "fade-right",
+        onClick: () => {
+          // Scroll to Portfolio projects section
+          const portfolioSection = document.querySelector("#Portofolio");
+          if (portfolioSection) {
+            portfolioSection.scrollIntoView({ behavior: 'smooth' });
+            // Wait a bit then switch to projects tab
+            setTimeout(() => {
+              const projectsTab = document.querySelector('[data-tab="projects"]');
+              if (projectsTab) projectsTab.click();
+            }, 500);
+          }
+        }
       },
       {
         icon: Award,
@@ -456,14 +468,29 @@ const AboutPage = () => {
         label: "Certificates",
         description: "Professional skills validated",
         animation: "fade-up",
+        onClick: () => {
+          // Scroll to Portfolio certificates section
+          const portfolioSection = document.querySelector("#Portofolio");
+          if (portfolioSection) {
+            portfolioSection.scrollIntoView({ behavior: 'smooth' });
+            // Wait a bit then switch to certificates tab
+            setTimeout(() => {
+              const certificatesTab = document.querySelector('[data-tab="certificates"]');
+              if (certificatesTab) certificatesTab.click();
+            }, 500);
+          }
+        }
       },
       {
-        icon: Globe,
+        icon: UserCheck,
         color: "from-[#6366f1] to-[#a855f7]",
         value: 2,
-        label: "Years of Study",
-        description: "AI & Data Science journey",
+        label: "Experience & Achievements",
+        description: "Professional journey & awards",
         animation: "fade-left",
+        onClick: () => {
+          setActiveSection('experience');
+        }
       },
     ],
     [totalProjects, totalCertificates, YearExperience]
@@ -535,9 +562,9 @@ const AboutPage = () => {
         </div>
 
         {/* Navigation Tabs */}
-        <div className="flex justify-center mb-8">
-          <div className="bg-gray-900/50 backdrop-blur-lg rounded-2xl p-2 border border-white/10">
-            <div className="flex gap-2">
+        <div className="flex justify-center mb-8 px-4">
+          <div className="bg-gray-900/50 backdrop-blur-lg rounded-2xl p-1 sm:p-2 border border-white/10 w-full max-w-md">
+            <div className="flex gap-1 sm:gap-2">
               {[
                 { id: 'overview', label: 'Overview', icon: Globe },
                 { id: 'experience', label: 'Experience', icon: Briefcase },
@@ -546,14 +573,15 @@ const AboutPage = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveSection(tab.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-300 ${
+                  className={`flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 rounded-xl transition-all duration-300 text-xs sm:text-sm flex-1 justify-center ${
                     activeSection === tab.id
                       ? 'bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white'
                       : 'text-gray-400 hover:text-white hover:bg-white/10'
                   }`}
                 >
-                  <tab.icon className="w-4 h-4" />
-                  {tab.label}
+                  <tab.icon className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <span className="hidden sm:inline">{tab.label}</span>
+                  <span className="sm:hidden">{tab.label.split(' ')[0]}</span>
                 </button>
               ))}
             </div>
@@ -567,11 +595,7 @@ const AboutPage = () => {
               <StatCard 
                 key={stat.label} 
                 {...stat} 
-                onClick={() => {
-                  if (stat.label === 'Major Projects') setActiveSection('experience');
-                  else if (stat.label === 'Certificates') setActiveSection('achievements');
-                  else if (stat.label === 'Years of Study') setActiveSection('experience');
-                }}
+                onClick={stat.onClick}
               />
             ))}
           </div>

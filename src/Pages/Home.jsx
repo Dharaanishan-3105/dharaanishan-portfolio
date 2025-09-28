@@ -149,74 +149,39 @@ const Home = () => {
   // Data Science Animation Component
   const DataScienceAnimation = () => (
     <div className="relative w-full h-full flex items-center justify-center">
-      {/* Main Monitor */}
-      <div className="relative">
-        {/* Monitor Screen */}
-        <div className="w-64 h-40 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg border-4 border-gray-600 shadow-2xl">
-          {/* Screen Content */}
-          <div className="w-full h-full p-4">
-            {/* Code Lines */}
-            <div className="space-y-2">
-              <div className="h-2 bg-blue-400 rounded w-3/4 animate-pulse"></div>
-              <div className="h-2 bg-green-400 rounded w-1/2 animate-pulse delay-100"></div>
-              <div className="h-2 bg-purple-400 rounded w-2/3 animate-pulse delay-200"></div>
-              <div className="h-2 bg-yellow-400 rounded w-1/3 animate-pulse delay-300"></div>
-            </div>
-            
-            {/* Data Visualization */}
-            <div className="absolute bottom-4 right-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-bounce"></div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Monitor Stand */}
-        <div className="w-32 h-4 bg-gray-600 mx-auto mt-2 rounded"></div>
-        <div className="w-20 h-8 bg-gray-700 mx-auto mt-1 rounded"></div>
-      </div>
-
-      {/* Floating Elements */}
-      <div className="absolute top-8 right-8">
-        {/* Phone */}
-        <div className="w-12 h-20 bg-gradient-to-br from-gray-700 to-gray-800 rounded-lg border-2 border-gray-500 shadow-lg animate-float">
-          <div className="w-full h-full p-2">
-            <div className="w-8 h-8 bg-green-500 rounded-full mx-auto mt-2 flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-full"></div>
-            </div>
-          </div>
+      {/* Main floating element */}
+      <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 bg-gradient-to-br from-purple-600 to-indigo-700 rounded-3xl shadow-2xl flex items-center justify-center animate-bounce">
+        <div className="absolute inset-0 bg-white/5 rounded-3xl animate-pulse"></div>
+        <div className="text-white text-5xl sm:text-6xl font-bold opacity-80">
+          AI
         </div>
       </div>
 
-      {/* Cloud Icon */}
-      <div className="absolute top-4 left-8 animate-float-delayed">
-        <div className="w-16 h-10 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full relative">
-          <div className="absolute -top-2 left-2 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
-          <div className="absolute -top-2 right-2 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
-          <div className="absolute -bottom-1 left-4 w-8 h-4 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+      {/* Orbiting elements */}
+      <div className="absolute w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-full bg-blue-500/70 flex items-center justify-center -top-8 -left-8 sm:-top-10 sm:-left-10 lg:-top-12 lg:-left-12 animate-pulse" style={{animationDelay: '0.5s'}}>
+        <div className="text-white text-xl sm:text-2xl font-semibold">
+          Data
+        </div>
+      </div>
+      <div className="absolute w-20 h-20 sm:w-28 sm:h-28 lg:w-36 lg:h-36 rounded-full bg-green-500/70 flex items-center justify-center -bottom-8 -right-8 sm:-bottom-10 sm:-right-10 lg:-bottom-12 lg:-right-12 animate-pulse" style={{animationDelay: '1s'}}>
+        <div className="text-white text-lg sm:text-xl font-semibold">
+          ML
         </div>
       </div>
 
-      {/* Gear Icons */}
-      <div className="absolute bottom-8 left-4 animate-spin-slow">
-        <div className="w-8 h-8 border-4 border-gray-400 rounded-full flex items-center justify-center">
-          <div className="w-4 h-4 border-2 border-gray-300 rounded-full"></div>
-        </div>
+      {/* Spinning gears/elements */}
+      <div className="absolute w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full border-4 border-yellow-400/70 flex items-center justify-center top-1/4 left-1/4 animate-spin" style={{animationDuration: '8s'}}>
+        <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-yellow-400 rounded-full"></div>
+      </div>
+      <div className="absolute w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full border-4 border-red-400/70 flex items-center justify-center bottom-1/4 right-1/4 animate-spin" style={{animationDuration: '6s', animationDirection: 'reverse'}}>
+        <div className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-red-400 rounded-full"></div>
       </div>
 
-      <div className="absolute top-16 right-16 animate-spin-reverse">
-        <div className="w-6 h-6 border-3 border-gray-400 rounded-full flex items-center justify-center">
-          <div className="w-2 h-2 border border-gray-300 rounded-full"></div>
-        </div>
-      </div>
-
-      {/* Chart Icon */}
-      <div className="absolute bottom-16 right-4 animate-bounce-slow">
-        <div className="w-12 h-8 bg-gradient-to-r from-green-400 to-blue-400 rounded flex items-end justify-between p-1">
-          <div className="w-2 h-4 bg-white rounded"></div>
-          <div className="w-2 h-6 bg-white rounded"></div>
-          <div className="w-2 h-3 bg-white rounded"></div>
-          <div className="w-2 h-5 bg-white rounded"></div>
-        </div>
+      {/* Connecting lines/dots */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full animate-bounce" style={{ animationDelay: '0s' }}></div>
+        <div className="w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
+        <div className="w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
       </div>
     </div>
   );
