@@ -1,4 +1,4 @@
-import React, { useEffect, memo, useMemo } from "react";
+import React, { useEffect, memo, useMemo, useState } from "react";
 import {
   FileText,
   Code,
@@ -7,6 +7,14 @@ import {
   ArrowUpRight,
   Sparkles,
   UserCheck,
+  Briefcase,
+  GraduationCap,
+  Trophy,
+  Calendar,
+  MapPin,
+  ExternalLink,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -107,11 +115,12 @@ const ProfileImage = memo(() => (
 ));
 
 const StatCard = memo(
-  ({ icon: Icon, color, value, label, description, animation }) => (
+  ({ icon: Icon, color, value, label, description, animation, onClick }) => (
     <div
       data-aos={animation}
       data-aos-duration={1300}
-      className="relative group"
+      className="relative group cursor-pointer"
+      onClick={onClick}
     >
       <div className="relative z-10 bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-white/10 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full flex flex-col justify-between">
         <div
@@ -158,7 +167,152 @@ const StatCard = memo(
   )
 );
 
+// Enhanced Experience Card Component
+const ExperienceCard = memo(({ experience, isExpanded, onToggle }) => {
+  const Icon = experience.icon;
+  return (
+    <div className="bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-white/10 transition-all duration-300 hover:shadow-2xl">
+      <div className={`absolute inset-0 bg-gradient-to-br ${experience.color} opacity-5 rounded-2xl`}></div>
+      
+      <div className="relative z-10">
+        <div className="flex items-start justify-between mb-4">
+          <div className="flex items-center gap-4">
+            <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${experience.color} flex items-center justify-center`}>
+              <Icon className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-white">{experience.title}</h3>
+              <p className="text-gray-300">{experience.company}</p>
+            </div>
+          </div>
+          <button
+            onClick={() => onToggle(experience.id)}
+            className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+          >
+            {isExpanded ? <ChevronUp className="w-5 h-5 text-white" /> : <ChevronDown className="w-5 h-5 text-white" />}
+          </button>
+        </div>
+
+        <div className="flex items-center gap-4 mb-4 text-sm text-gray-400">
+          <div className="flex items-center gap-1">
+            <Calendar className="w-4 h-4" />
+            {experience.duration}
+          </div>
+          <div className="flex items-center gap-1">
+            <MapPin className="w-4 h-4" />
+            {experience.location}
+          </div>
+          <span className="px-2 py-1 bg-white/10 rounded-full text-xs">
+            {experience.type}
+          </span>
+        </div>
+
+        <p className="text-gray-300 mb-4">{experience.description}</p>
+
+        {isExpanded && (
+          <div className="space-y-4 animate-fadeIn">
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-2">Key Achievements</h4>
+              <ul className="space-y-2">
+                {experience.achievements.map((achievement, index) => (
+                  <li key={index} className="flex items-start gap-2 text-gray-300">
+                    <span className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mt-2 flex-shrink-0"></span>
+                    {achievement}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-2">Technologies Used</h4>
+              <div className="flex flex-wrap gap-2">
+                {experience.technologies.map((tech, index) => (
+                  <span key={index} className="px-3 py-1 bg-white/10 rounded-full text-sm text-gray-300">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+});
+
+// Enhanced Achievement Card Component
+const AchievementCard = memo(({ achievement, isExpanded, onToggle }) => {
+  const Icon = achievement.icon;
+  return (
+    <div className="bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-white/10 transition-all duration-300 hover:shadow-2xl">
+      <div className={`absolute inset-0 bg-gradient-to-br ${achievement.color} opacity-5 rounded-2xl`}></div>
+      
+      <div className="relative z-10">
+        <div className="flex items-start justify-between mb-4">
+          <div className="flex items-center gap-4">
+            <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${achievement.color} flex items-center justify-center`}>
+              <Icon className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-white">{achievement.title}</h3>
+              <p className="text-gray-300">{achievement.organization}</p>
+            </div>
+          </div>
+          <button
+            onClick={() => onToggle(achievement.id)}
+            className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+          >
+            {isExpanded ? <ChevronUp className="w-5 h-5 text-white" /> : <ChevronDown className="w-5 h-5 text-white" />}
+          </button>
+        </div>
+
+        <div className="flex items-center gap-4 mb-4 text-sm text-gray-400">
+          <div className="flex items-center gap-1">
+            <Calendar className="w-4 h-4" />
+            {achievement.date}
+          </div>
+          <span className="px-2 py-1 bg-white/10 rounded-full text-xs">
+            {achievement.category}
+          </span>
+        </div>
+
+        <p className="text-gray-300 mb-4">{achievement.description}</p>
+
+        {isExpanded && (
+          <div className="space-y-4 animate-fadeIn">
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-2">Project Details</h4>
+              <ul className="space-y-2">
+                {achievement.details.map((detail, index) => (
+                  <li key={index} className="flex items-start gap-2 text-gray-300">
+                    <span className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full mt-2 flex-shrink-0"></span>
+                    {detail}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-2">Technologies Used</h4>
+              <div className="flex flex-wrap gap-2">
+                {achievement.technologies.map((tech, index) => (
+                  <span key={index} className="px-3 py-1 bg-white/10 rounded-full text-sm text-gray-300">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+});
+
 const AboutPage = () => {
+  const [expandedCard, setExpandedCard] = useState(null);
+  const [activeSection, setActiveSection] = useState('overview');
+
   // Memoized calculations
   const { totalProjects, totalCertificates, YearExperience } = useMemo(() => {
     const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
@@ -182,6 +336,83 @@ const AboutPage = () => {
       YearExperience: experience,
     };
   }, []);
+
+  // Work Experience Data
+  const workExperience = [
+    {
+      id: 'web-dev-intern',
+      title: 'Web Development Intern',
+      company: 'Sri Sai Tech and HR Solutions',
+      duration: 'Aug 2024 - Sep 2024',
+      location: 'Trichy, India',
+      type: 'Internship',
+      description: 'Successfully completed a 120-hour Web Development internship at Sri Sai Tech and HR Solutions.',
+      achievements: [
+        'Gained practical experience in building and deploying web applications',
+        'Demonstrated strong problem-solving abilities and attention to detail',
+        'Worked on real-world development tasks and projects',
+        'Completed comprehensive web development training program'
+      ],
+      technologies: ['HTML/CSS', 'JavaScript', 'React', 'Node.js', 'Web Development'],
+      icon: Briefcase,
+      color: 'from-blue-500 to-cyan-500'
+    }
+  ];
+
+  // Achievements Data
+  const achievements = [
+    {
+      id: 'project-expo-2024-2025',
+      title: '1st Prize - Project Expo',
+      organization: 'Indra Ganesan College of Engineering',
+      date: '2024 & 2025',
+      category: 'Innovation',
+      description: 'Won First Prize in Project Expo at Indra Ganesan College of Engineering, Trichy.',
+      details: [
+        'Demonstrated innovative project solutions',
+        'Showcased technical expertise and creativity',
+        'Competed against multiple teams and projects',
+        'Received recognition for outstanding project presentation'
+      ],
+      technologies: ['Project Development', 'Innovation', 'Technical Presentation', 'Problem Solving'],
+      icon: Trophy,
+      color: 'from-yellow-500 to-orange-500'
+    },
+    {
+      id: 'webots-neotrex-2024',
+      title: '1st Prize - Webots (Web Development)',
+      organization: 'M.A.M College of Engineering',
+      date: '2024',
+      category: 'Web Development',
+      description: 'Won 1st Prize in Webots (Web Development) competition at NEOTREX\'24.',
+      details: [
+        'Competed in web development challenges',
+        'Demonstrated proficiency in modern web technologies',
+        'Solved complex web development problems',
+        'Achieved top position among participating teams'
+      ],
+      technologies: ['Web Development', 'HTML/CSS', 'JavaScript', 'React', 'Node.js'],
+      icon: Award,
+      color: 'from-green-500 to-teal-500'
+    },
+    {
+      id: 'srm-competitions-2024',
+      title: '2nd Prize - Multiple Events',
+      organization: 'SRM Valliammai Engineering College',
+      date: '2024',
+      category: 'Competitions',
+      description: 'Won 2nd Prize in both Analytix (Technical) and Flick Frenzy (Non-Technical) events.',
+      details: [
+        'Analytix (Technical): Demonstrated analytical and technical skills',
+        'Flick Frenzy (Non-Technical): Showcased creativity and innovation',
+        'Competed against students from multiple colleges',
+        'Achieved recognition in both technical and non-technical domains'
+      ],
+      technologies: ['Technical Analysis', 'Problem Solving', 'Innovation', 'Creativity'],
+      icon: GraduationCap,
+      color: 'from-indigo-500 to-purple-500'
+    }
+  ];
 
   // Optimized AOS initialization
   useEffect(() => {
@@ -303,13 +534,76 @@ const AboutPage = () => {
           <ProfileImage />
         </div>
 
-        <a href="#Portofolio">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 cursor-pointer">
+        {/* Navigation Tabs */}
+        <div className="flex justify-center mb-8">
+          <div className="bg-gray-900/50 backdrop-blur-lg rounded-2xl p-2 border border-white/10">
+            <div className="flex gap-2">
+              {[
+                { id: 'overview', label: 'Overview', icon: Globe },
+                { id: 'experience', label: 'Experience', icon: Briefcase },
+                { id: 'achievements', label: 'Achievements', icon: Trophy }
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveSection(tab.id)}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-300 ${
+                    activeSection === tab.id
+                      ? 'bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white'
+                      : 'text-gray-400 hover:text-white hover:bg-white/10'
+                  }`}
+                >
+                  <tab.icon className="w-4 h-4" />
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Content Sections */}
+        {activeSection === 'overview' && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             {statsData.map((stat) => (
-              <StatCard key={stat.label} {...stat} />
+              <StatCard 
+                key={stat.label} 
+                {...stat} 
+                onClick={() => {
+                  if (stat.label === 'Major Projects') setActiveSection('experience');
+                  else if (stat.label === 'Certificates') setActiveSection('achievements');
+                  else if (stat.label === 'Years of Study') setActiveSection('experience');
+                }}
+              />
             ))}
           </div>
-        </a>
+        )}
+
+        {activeSection === 'experience' && (
+          <div className="space-y-6 mt-8">
+            <h3 className="text-2xl font-bold text-white text-center mb-8">Work Experience</h3>
+            {workExperience.map((exp) => (
+              <ExperienceCard
+                key={exp.id}
+                experience={exp}
+                isExpanded={expandedCard === exp.id}
+                onToggle={(id) => setExpandedCard(expandedCard === id ? null : id)}
+              />
+            ))}
+          </div>
+        )}
+
+        {activeSection === 'achievements' && (
+          <div className="space-y-6 mt-8">
+            <h3 className="text-2xl font-bold text-white text-center mb-8">Achievements & Awards</h3>
+            {achievements.map((achievement) => (
+              <AchievementCard
+                key={achievement.id}
+                achievement={achievement}
+                isExpanded={expandedCard === achievement.id}
+                onToggle={(id) => setExpandedCard(expandedCard === id ? null : id)}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       <style jsx>{`
@@ -327,6 +621,16 @@ const AboutPage = () => {
             transform: rotate(360deg);
           }
         }
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
         .animate-bounce-slow {
           animation: bounce 3s infinite;
         }
@@ -335,6 +639,9 @@ const AboutPage = () => {
         }
         .animate-spin-slower {
           animation: spin-slower 8s linear infinite;
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.5s ease-out;
         }
       `}</style>
     </div>

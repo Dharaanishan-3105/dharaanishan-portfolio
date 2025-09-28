@@ -6,7 +6,7 @@ import {
   ExternalLink,
   Instagram,
 } from "lucide-react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+// Removed Lottie import - using CSS animations instead
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -146,22 +146,80 @@ const Home = () => {
     return () => clearTimeout(timeout);
   }, [handleTyping]);
 
-  // Lottie configuration
-  const lottieOptions = {
-    src: "https://lottie.host/58753882-bb6a-49f5-a2c0-950eda1e135a/NLbpVqGegK.lottie",
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-      progressiveLoad: true,
-    },
-    style: { width: "100%", height: "100%" },
-    className: `w-full h-full transition-all duration-500 ${
-      isHovering
-        ? "scale-[180%] sm:scale-[160%] md:scale-[150%] lg:scale-[145%] rotate-2"
-        : "scale-[175%] sm:scale-[155%] md:scale-[145%] lg:scale-[140%]"
-    }`,
-  };
+  // Data Science Animation Component
+  const DataScienceAnimation = () => (
+    <div className="relative w-full h-full flex items-center justify-center">
+      {/* Main Monitor */}
+      <div className="relative">
+        {/* Monitor Screen */}
+        <div className="w-64 h-40 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg border-4 border-gray-600 shadow-2xl">
+          {/* Screen Content */}
+          <div className="w-full h-full p-4">
+            {/* Code Lines */}
+            <div className="space-y-2">
+              <div className="h-2 bg-blue-400 rounded w-3/4 animate-pulse"></div>
+              <div className="h-2 bg-green-400 rounded w-1/2 animate-pulse delay-100"></div>
+              <div className="h-2 bg-purple-400 rounded w-2/3 animate-pulse delay-200"></div>
+              <div className="h-2 bg-yellow-400 rounded w-1/3 animate-pulse delay-300"></div>
+            </div>
+            
+            {/* Data Visualization */}
+            <div className="absolute bottom-4 right-4">
+              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-bounce"></div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Monitor Stand */}
+        <div className="w-32 h-4 bg-gray-600 mx-auto mt-2 rounded"></div>
+        <div className="w-20 h-8 bg-gray-700 mx-auto mt-1 rounded"></div>
+      </div>
+
+      {/* Floating Elements */}
+      <div className="absolute top-8 right-8">
+        {/* Phone */}
+        <div className="w-12 h-20 bg-gradient-to-br from-gray-700 to-gray-800 rounded-lg border-2 border-gray-500 shadow-lg animate-float">
+          <div className="w-full h-full p-2">
+            <div className="w-8 h-8 bg-green-500 rounded-full mx-auto mt-2 flex items-center justify-center">
+              <div className="w-4 h-4 bg-white rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Cloud Icon */}
+      <div className="absolute top-4 left-8 animate-float-delayed">
+        <div className="w-16 h-10 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full relative">
+          <div className="absolute -top-2 left-2 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+          <div className="absolute -top-2 right-2 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+          <div className="absolute -bottom-1 left-4 w-8 h-4 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+        </div>
+      </div>
+
+      {/* Gear Icons */}
+      <div className="absolute bottom-8 left-4 animate-spin-slow">
+        <div className="w-8 h-8 border-4 border-gray-400 rounded-full flex items-center justify-center">
+          <div className="w-4 h-4 border-2 border-gray-300 rounded-full"></div>
+        </div>
+      </div>
+
+      <div className="absolute top-16 right-16 animate-spin-reverse">
+        <div className="w-6 h-6 border-3 border-gray-400 rounded-full flex items-center justify-center">
+          <div className="w-2 h-2 border border-gray-300 rounded-full"></div>
+        </div>
+      </div>
+
+      {/* Chart Icon */}
+      <div className="absolute bottom-16 right-4 animate-bounce-slow">
+        <div className="w-12 h-8 bg-gradient-to-r from-green-400 to-blue-400 rounded flex items-end justify-between p-1">
+          <div className="w-2 h-4 bg-white rounded"></div>
+          <div className="w-2 h-6 bg-white rounded"></div>
+          <div className="w-2 h-3 bg-white rounded"></div>
+          <div className="w-2 h-5 bg-white rounded"></div>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <div className="min-h-screen bg-[#030014] overflow-hidden" id="Home">
@@ -171,7 +229,7 @@ const Home = () => {
         }`}
       >
         <div className="container mx-auto px-[5%] sm:px-6 lg:px-[0%] min-h-screen">
-          <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen md:justify-between gap-0 sm:gap-12 lg:gap-20 py-8 sm:py-12 lg:py-0">
+          <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen md:justify-between gap-0 sm:gap-12 lg:gap-20 pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 lg:pb-0">
             {/* Left Column */}
             <div
               className="w-full lg:w-1/2 space-y-6 sm:space-y-8 text-left lg:text-left order-1 lg:order-1 lg:mt-0"
@@ -261,7 +319,7 @@ const Home = () => {
                     isHovering ? "scale-105" : "scale-100"
                   }`}
                 >
-                  <DotLottieReact {...lottieOptions} />
+                  <DataScienceAnimation />
                 </div>
 
                 <div
