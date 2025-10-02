@@ -482,6 +482,34 @@ export default function FullWidthTabs() {
                     </a>
                   </div>
                 </div>
+
+              {/* Fire Detection & Alert System */}
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1100"
+              >
+                <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-6 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold text-white mb-2">Fire Detection & Alert System</h3>
+                    <p className="text-gray-300 text-sm mb-4">
+                      Real-time AI-based system that detects fire through camera feed and instantly triggers an audible alarm and sends email alerts. Logs all detection events and provides configurable sensitivity for flexible deployment in homes, offices, or industries.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">Python</span>
+                      <span className="px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded">OpenCV</span>
+                      <span className="px-2 py-1 bg-pink-500/20 text-pink-300 text-xs rounded">Deep Learning</span>
+                    </div>
+                  </div>
+                  <a 
+                    href="https://github.com/Dharaanishan-3105/Fire-Detection-Alert-System" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-indigo-400 hover:text-indigo-300 text-sm font-medium transition-colors duration-200"
+                  >
+                    View Project →
+                  </a>
+                </div>
+              </div>
               </div>
             </div>
           </TabPanel>

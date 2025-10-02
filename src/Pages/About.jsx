@@ -343,6 +343,24 @@ const AboutPage = () => {
   // Achievements Data
   const achievements = [
     {
+      id: 'sih-2023-internal-finalist',
+      title: 'Smart India Hackathon Finalist (Internal) – 2023',
+      organization: 'Smart India Hackathon – Student Innovation',
+      date: '2023',
+      category: 'AI, Computer Vision',
+      description:
+        'Proposed an AI-powered wearable mobility aid combining stereo vision and deep learning to assist visually impaired users with real-time detection of traffic signs, moving obstacles, hanging objects, elevation changes, and crosswalks. Delivered voice-based feedback over Bluetooth and full voice-command operation for hands-free navigation.',
+      details: [
+        'Integrated OAK-D depth camera for stereo vision and depth perception',
+        'Custom-trained object detection models for navigation cues',
+        'GPS-based routing with voice-guided assistance',
+        'Solar-powered battery support for portable, power-efficient usage',
+      ],
+      technologies: ['Stereo Vision', 'Deep Learning', 'OAK-D', 'Edge AI', 'TTS'],
+      icon: Award,
+      color: 'from-emerald-500 to-teal-500',
+    },
+    {
       id: 'project-expo-2024-2025',
       title: '1st Prize - Project Expo',
       organization: 'Indra Ganesan College of Engineering',
@@ -375,6 +393,24 @@ const AboutPage = () => {
       technologies: ['Web Development', 'HTML/CSS', 'JavaScript', 'React', 'Node.js'],
       icon: Award,
       color: 'from-green-500 to-teal-500'
+    },
+    {
+      id: 'sih-2024-internal-finalist',
+      title: 'Smart India Hackathon Finalist (Internal) – 2024',
+      organization: 'Smart India Hackathon – Student Innovation',
+      date: '2024',
+      category: 'AI, Accessibility',
+      description:
+        'Proposed a real-time web platform enabling two-way translation between sign language and speech/text using AI, computer vision, NLP, and animated avatars. Designed for accessibility and inclusivity with gesture recognition, voice-to-sign conversion, and interactive learning modules.',
+      details: [
+        'Camera-based gesture recognition for live sign detection',
+        'Voice-to-sign conversion using NLP and 3D avatar animation',
+        'Interactive sign learning modules for education and practice',
+        'Scalable, web-based architecture for broad accessibility',
+      ],
+      technologies: ['Computer Vision', 'NLP', 'Web Platform', '3D Avatars'],
+      icon: Trophy,
+      color: 'from-sky-500 to-indigo-500',
     },
     {
       id: 'srm-competitions-2024',
