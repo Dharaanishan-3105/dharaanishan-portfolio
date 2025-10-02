@@ -11,6 +11,106 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import SocialPreview from "../components/SocialPreview";
 
+// Data Science Animation - Exact Match to Reference Image
+const DataScienceAnimation = memo(() => (
+  <div className="relative w-full h-full flex items-center justify-center">
+    {/* Central Monitor */}
+    <div className="relative z-10">
+      <div className="w-80 h-48 bg-gradient-to-br from-slate-600 to-slate-700 rounded-lg border-4 border-slate-500 shadow-2xl">
+        <div className="w-full h-full p-6">
+          {/* Code Lines */}
+          <div className="space-y-3">
+            <div className="h-3 bg-blue-400 rounded w-4/5 animate-pulse"></div>
+            <div className="h-3 bg-green-400 rounded w-3/5 animate-pulse" style={{animationDelay: '0.2s'}}></div>
+            <div className="h-3 bg-purple-400 rounded w-2/3 animate-pulse" style={{animationDelay: '0.4s'}}></div>
+            <div className="h-3 bg-yellow-400 rounded w-1/2 animate-pulse" style={{animationDelay: '0.6s'}}></div>
+          </div>
+          
+          {/* Code Icon - Bottom Left */}
+          <div className="absolute bottom-6 left-6">
+            <div className="w-10 h-8 bg-green-500 rounded flex items-center justify-center">
+              <span className="text-white text-sm font-bold">&lt;/&gt;</span>
+            </div>
+          </div>
+          
+          {/* Data Visualization - Bottom Right */}
+          <div className="absolute bottom-6 right-6">
+            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-bounce"></div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Monitor Stand */}
+      <div className="w-40 h-6 bg-slate-500 mx-auto mt-3 rounded"></div>
+      <div className="w-28 h-10 bg-slate-600 mx-auto mt-2 rounded"></div>
+    </div>
+
+    {/* Phone - Right Side */}
+    <div className="absolute top-12 right-12 z-20">
+      <div className="w-16 h-28 bg-gradient-to-br from-slate-600 to-slate-700 rounded-lg border-2 border-slate-500 shadow-lg animate-bounce" style={{animationDuration: '3s'}}>
+        <div className="w-full h-full p-3">
+          <div className="w-10 h-10 bg-green-500 rounded-full mx-auto mt-4 flex items-center justify-center">
+            <div className="w-5 h-5 bg-white rounded-full"></div>
+          </div>
+          <div className="w-6 h-6 bg-slate-400 rounded-full mx-auto mt-4"></div>
+        </div>
+      </div>
+    </div>
+
+    {/* Cloud - Top Left */}
+    <div className="absolute top-6 left-12 z-20">
+      <div className="w-20 h-12 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full relative animate-bounce" style={{animationDuration: '4s', animationDelay: '0.5s'}}>
+        <div className="absolute -top-2 left-3 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+        <div className="absolute -top-2 right-3 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+        <div className="absolute -bottom-1 left-4 w-8 h-4 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+        {/* Arrow pointing down */}
+        <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2">
+          <div className="w-0 h-0 border-l-3 border-r-3 border-t-6 border-transparent border-t-blue-400"></div>
+        </div>
+      </div>
+    </div>
+
+    {/* Data List - Top Center */}
+    <div className="absolute top-20 left-1/2 transform -translate-x-1/2 z-20">
+      <div className="w-16 h-12 bg-gradient-to-r from-blue-400 to-purple-400 rounded flex flex-col justify-between p-2 animate-bounce" style={{animationDuration: '3.5s', animationDelay: '1s'}}>
+        <div className="w-full h-1.5 bg-white rounded"></div>
+        <div className="w-full h-1.5 bg-white rounded"></div>
+        <div className="w-full h-1.5 bg-white rounded"></div>
+      </div>
+    </div>
+
+    {/* Gear - Bottom Left */}
+    <div className="absolute bottom-12 left-8 z-20">
+      <div className="w-12 h-12 border-4 border-blue-400 rounded-full flex items-center justify-center animate-spin" style={{animationDuration: '8s'}}>
+        <div className="w-6 h-6 border-2 border-blue-300 rounded-full"></div>
+      </div>
+    </div>
+
+    {/* Gear - Top Right */}
+    <div className="absolute top-24 right-20 z-20">
+      <div className="w-10 h-10 border-3 border-purple-400 rounded-full flex items-center justify-center animate-spin" style={{animationDuration: '6s', animationDirection: 'reverse'}}>
+        <div className="w-4 h-4 border border-purple-300 rounded-full"></div>
+      </div>
+    </div>
+
+    {/* Chart - Bottom Right */}
+    <div className="absolute bottom-20 right-8 z-20">
+      <div className="w-16 h-12 bg-gradient-to-r from-green-400 to-blue-400 rounded flex items-end justify-between p-2 animate-bounce" style={{animationDuration: '2s'}}>
+        <div className="w-2 h-6 bg-white rounded"></div>
+        <div className="w-2 h-8 bg-white rounded"></div>
+        <div className="w-2 h-4 bg-white rounded"></div>
+        <div className="w-2 h-7 bg-white rounded"></div>
+      </div>
+    </div>
+
+    {/* Background Gears - Large */}
+    <div className="absolute inset-0 opacity-20 z-0">
+      <div className="absolute top-1/4 left-1/4 w-24 h-24 border-3 border-gray-400 rounded-full animate-spin" style={{animationDuration: '15s'}}></div>
+      <div className="absolute bottom-1/4 right-1/4 w-20 h-20 border-3 border-gray-400 rounded-full animate-spin" style={{animationDuration: '12s', animationDirection: 'reverse'}}></div>
+    </div>
+  </div>
+));
+
 // Memoized Components
 
 const MainTitle = memo(() => (
@@ -229,7 +329,7 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Right Column - Optimized Lottie Animation */}
+            {/* Right Column - Data Science Animation */}
             <div
               className="w-full py-[10%] sm:py-0 lg:w-1/2 h-auto lg:h-[600px] xl:h-[750px] relative flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0"
               onMouseEnter={() => setIsHovering(true)}
@@ -237,13 +337,7 @@ const Home = () => {
               data-aos="fade-left"
               data-aos-delay="600"
             >
-              <div className="relative w-full flex items-center justify-center">
-                <div className="text-center text-gray-400">
-                  <div className="text-8xl mb-6">💻</div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Data Science & AI</h3>
-                  <p className="text-lg">Building the future with intelligent code</p>
-                </div>
-              </div>
+              <DataScienceAnimation />
             </div>
           </div>
         </div>
