@@ -6,7 +6,8 @@ import {
   ExternalLink,
   Instagram,
 } from "lucide-react";
-// Removed Lottie import - using CSS animations instead
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+// Using hosted Lottie for crisp quality
 import AOS from "aos";
 import "aos/dist/aos.css";
 import SocialPreview from "../components/SocialPreview";
@@ -229,7 +230,7 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Right Column - Optimized Lottie Animation */}
+            {/* Right Column - Lottie Animation */}
             <div
               className="w-full py-[10%] sm:py-0 lg:w-1/2 h-auto lg:h-[600px] xl:h-[750px] relative flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0"
               onMouseEnter={() => setIsHovering(true)}
@@ -237,20 +238,14 @@ const Home = () => {
               data-aos="fade-left"
               data-aos-delay="600"
             >
-              <div className="relative w-full flex items-center justify-center">
-                <div className="relative w-full max-w-lg">
-                  <img
-                    src="/Coding.gif"
-                    alt="Data Science Animation"
-                    className="w-full h-auto rounded-lg shadow-2xl"
-                    style={{
-                      filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))',
-                      maxHeight: '500px',
-                      objectFit: 'contain'
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#030014]/20 to-transparent rounded-lg pointer-events-none"></div>
-                </div>
+              <div className="relative w-full max-w-[640px] aspect-square flex items-center justify-center rounded-2xl overflow-hidden">
+                <DotLottieReact
+                  src="https://lottie.host/860bba33-12db-484a-9379-f7356dd65ff2/hEiZ5JdnAb.json"
+                  loop
+                  autoplay
+                  className="w-full h-full drop-shadow-2xl"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#030014]/10 to-transparent"></div>
               </div>
             </div>
           </div>
