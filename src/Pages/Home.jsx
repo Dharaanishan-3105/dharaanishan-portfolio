@@ -6,29 +6,10 @@ import {
   ExternalLink,
   Instagram,
 } from "lucide-react";
-import Lottie from "lottie-react";
+// Removed Lottie import - using CSS animations instead
 import AOS from "aos";
 import "aos/dist/aos.css";
 import SocialPreview from "../components/SocialPreview";
-import codingAnimation from "/Coding.json";
-
-// Lottie Animation Component using Coding.json
-const DataScienceAnimation = memo(() => (
-  <div className="relative w-full h-full flex items-center justify-center">
-    <Lottie
-      animationData={codingAnimation}
-      loop={true}
-      autoplay={true}
-      style={{
-        width: '100%',
-        height: '100%',
-        maxWidth: '600px',
-        maxHeight: '600px'
-      }}
-      className="drop-shadow-2xl"
-    />
-  </div>
-));
 
 // Memoized Components
 
@@ -248,7 +229,7 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Right Column - Data Science Animation */}
+            {/* Right Column - Optimized Lottie Animation */}
             <div
               className="w-full py-[10%] sm:py-0 lg:w-1/2 h-auto lg:h-[600px] xl:h-[750px] relative flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0"
               onMouseEnter={() => setIsHovering(true)}
@@ -256,7 +237,21 @@ const Home = () => {
               data-aos="fade-left"
               data-aos-delay="600"
             >
-              <DataScienceAnimation />
+              <div className="relative w-full flex items-center justify-center">
+                <div className="relative w-full max-w-lg">
+                  <img
+                    src="/Coding.gif"
+                    alt="Data Science Animation"
+                    className="w-full h-auto rounded-lg shadow-2xl"
+                    style={{
+                      filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))',
+                      maxHeight: '500px',
+                      objectFit: 'contain'
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#030014]/20 to-transparent rounded-lg pointer-events-none"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
