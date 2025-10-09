@@ -446,23 +446,6 @@ const AboutPage = () => {
       year: '2023'
     },
     {
-      id: 'webots-competition-2024',
-      title: '1st Prize - Webots Competition',
-      organization: 'Indra Ganesan College of Engineering',
-      date: '2024',
-      category: 'Robotics',
-      description: 'Won First Prize in Webots Robotics Competition for developing autonomous navigation algorithms.',
-      details: [
-        'Developed autonomous navigation algorithms using Webots simulation',
-        'Implemented path planning and obstacle avoidance algorithms',
-        'Demonstrated expertise in robotics programming and simulation'
-      ],
-      technologies: ['Webots', 'Python', 'Robotics', 'Simulation', 'Navigation'],
-      icon: Trophy,
-      color: 'from-cyan-500 to-blue-500',
-      year: '2024'
-    },
-    {
       id: 'sih-2023-internal-finalist',
       title: 'Smart India Hackathon Finalist (Internal) – 2023',
       organization: 'Smart India Hackathon – Student Innovation',
