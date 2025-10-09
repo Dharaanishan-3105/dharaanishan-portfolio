@@ -411,24 +411,6 @@ const AboutPage = () => {
       year: '2024'
     },
     {
-      id: 'sih-2023-internal-finalist',
-      title: 'Smart India Hackathon Finalist (Internal) – 2023',
-      organization: 'Smart India Hackathon – Student Innovation',
-      date: '2023',
-      category: 'AI, Accessibility',
-      description: 'AI‑powered Stereovision Assistance Technology for Visually Impaired persons.',
-      details: [
-        'Stereo vision with OAK‑D and custom object detection',
-        'Voice guidance, GPS navigation, and solar power support',
-        'Real-time obstacle detection and traffic sign recognition',
-        'Portable, cost-effective, and power-efficient design'
-      ],
-      technologies: ['Stereo Vision', 'Deep Learning', 'OAK‑D', 'Edge AI', 'TTS'],
-      icon: Award,
-      color: 'from-emerald-500 to-teal-500',
-      year: '2023'
-    },
-    {
       id: 'mole-1-0-special-prize-2025',
       title: 'Mole 1.0 Hackathon – Special Prize Winner',
       organization: 'Indra Ganesan Institutions (Internal Idea Event)',
@@ -479,25 +461,6 @@ const AboutPage = () => {
       icon: Trophy,
       color: 'from-cyan-500 to-blue-500',
       year: '2024'
-    },
-    {
-      id: 'ai-ml-certifications',
-      title: 'AI & ML Professional Certifications',
-      organization: 'Multiple Platforms',
-      date: '2022-2024',
-      category: 'Certification',
-      description: 'Earned multiple professional certifications in AI, Machine Learning, and Data Science.',
-      details: [
-        'Google AI/ML Fundamentals Certificate',
-        'IBM Data Science Professional Certificate',
-        'Microsoft Azure AI Fundamentals',
-        'TensorFlow Developer Certificate',
-        'Python for Data Science and Machine Learning'
-      ],
-      technologies: ['Python', 'TensorFlow', 'Azure', 'Machine Learning', 'Data Science'],
-      icon: Award,
-      color: 'from-purple-500 to-pink-500',
-      year: '2022-2024'
     },
     {
       id: 'sih-2023-internal-finalist',

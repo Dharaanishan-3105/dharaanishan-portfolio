@@ -458,7 +458,10 @@ export default function FullWidthTabs() {
                   <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
                     <img src="/projects/attendance.png" alt="Face Recognition Attendance" className="w-full h-40 object-cover" />
                     <div className="mb-4">
-                      <h3 className="text-xl font-bold text-white mb-2 px-6 mt-4">Face Recognition Attendance System</h3>
+                      <div className="flex items-center justify-between mb-2 px-6 mt-4">
+                        <h3 className="text-xl font-bold text-white">Face Recognition Attendance System</h3>
+                        <span className="text-[11px] text-gray-300 bg-white/5 rounded-full px-2 py-0.5 border border-white/10">2024</span>
+                      </div>
                       <p className="text-gray-300 text-sm mb-4 px-6">
                         Automated student attendance using real-time face detection and recognition. Marks IN/OUT time, stores records in a database, and exports daily reports to Excel.
                       </p>
@@ -490,7 +493,10 @@ export default function FullWidthTabs() {
                   <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
                     <img src="/projects/object-detection.png" alt="Object Detection App" className="w-full h-40 object-cover" />
                     <div className="mb-4">
-                      <h3 className="text-xl font-bold text-white mb-2 px-6 mt-4">Object Detection Mobile App</h3>
+                      <div className="flex items-center justify-between mb-2 px-6 mt-4">
+                        <h3 className="text-xl font-bold text-white">Object Detection Mobile App</h3>
+                        <span className="text-[11px] text-gray-300 bg-white/5 rounded-full px-2 py-0.5 border border-white/10">2025</span>
+                      </div>
                       <p className="text-gray-300 text-sm mb-4 px-6">
                         Real-time mobile app for object detection with camera input. Provides bounding boxes, confidence scores, and Text-to-Speech feedback, optimized for Android devices.
                       </p>
