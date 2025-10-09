@@ -20,7 +20,7 @@ const SocialPreview = ({ isOpen, onClose, platform, profileData }) => {
           icon: Linkedin,
           name: 'LinkedIn',
           color: 'from-blue-600 to-blue-800',
-          url: 'https://linkedin.com/in/dharaanishan-s',
+          url: 'https://www.linkedin.com/in/dharaanishan-selvendran-4d312005',
           description: 'Connect with me professionally on LinkedIn'
         };
       default:
