@@ -337,11 +337,168 @@ const AboutPage = () => {
       technologies: ['HTML/CSS', 'JavaScript', 'React', 'Node.js', 'Web Development'],
       icon: Briefcase,
       color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      id: 'shadowfox-ds-intern-2025',
+      title: 'Data Science Intern — ShadowFox (MSME Initiative)',
+      company: 'ShadowFox',
+      duration: 'Mar 2025',
+      location: 'Virtual',
+      type: 'Internship',
+      description: 'Completed a one-month virtual internship focusing on practical applications of Data Science across Beginner, Intermediate, and Advanced phases.',
+      achievements: [
+        'Beginner: Built data visualizations with Matplotlib and Seaborn',
+        "Intermediate: Performed EDA on Delhi's AQI to study seasonal and regional pollutant behavior",
+        'Advanced: Analysed IPL fielding performance and built a simple scoring model',
+        'Improved analytical, documentation, and presentation skills using real datasets',
+      ],
+      technologies: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
+      icon: Briefcase,
+      color: 'from-emerald-500 to-teal-500'
     }
   ];
 
   // Achievements Data
   const achievements = [
+    {
+      id: 'project-expo-2024',
+      title: '1st Prize - Project Expo',
+      organization: 'Indra Ganesan College of Engineering',
+      date: '2024',
+      category: 'Innovation',
+      description: 'Won First Prize in Project Expo (2024) with "Fire Detection & Alert System".',
+      details: [
+        'Developed real-time AI-based fire detection with alerts',
+        'Demonstrated system reliability and configurable sensitivity',
+      ],
+      technologies: ['Python', 'OpenCV', 'Deep Learning'],
+      icon: Trophy,
+      color: 'from-yellow-500 to-orange-500',
+      year: '2024'
+    },
+    {
+      id: 'project-expo-2025',
+      title: '1st Prize - Project Expo',
+      organization: 'Indra Ganesan College of Engineering',
+      date: '2025',
+      category: 'Innovation',
+      description: 'Won First Prize in Project Expo (2025) with "NeethiAI – A GenAI Legal Companion".',
+      details: [
+        'Bilingual legal Q&A and document summarization',
+        'Fake notice detection using verified sources',
+      ],
+      technologies: ['Python', 'Flask', 'PostgreSQL'],
+      icon: Trophy,
+      color: 'from-yellow-500 to-orange-500',
+      year: '2025'
+    },
+    {
+      id: 'sih-2024-internal-finalist',
+      title: 'Smart India Hackathon Finalist (Internal) – 2024',
+      organization: 'Smart India Hackathon – Student Innovation',
+      date: '2024',
+      category: 'AI, Accessibility',
+      description: 'AI‑Powered Sign Language Learning and Conversion: Bridging Communication for the Deaf and Mute.',
+      details: [
+        'Two‑way Sign ↔ Speech/Text using CV, NLP, and avatars',
+        'Interactive sign learning modules and accessibility focus',
+        'Real-time gesture recognition via camera',
+        'Voice-to-sign conversion and educational modules'
+      ],
+      technologies: ['Computer Vision', 'NLP', 'Web Platform', '3D Avatars'],
+      icon: Award,
+      color: 'from-sky-500 to-indigo-500',
+      year: '2024'
+    },
+    {
+      id: 'sih-2023-internal-finalist',
+      title: 'Smart India Hackathon Finalist (Internal) – 2023',
+      organization: 'Smart India Hackathon – Student Innovation',
+      date: '2023',
+      category: 'AI, Accessibility',
+      description: 'AI‑powered Stereovision Assistance Technology for Visually Impaired persons.',
+      details: [
+        'Stereo vision with OAK‑D and custom object detection',
+        'Voice guidance, GPS navigation, and solar power support',
+        'Real-time obstacle detection and traffic sign recognition',
+        'Portable, cost-effective, and power-efficient design'
+      ],
+      technologies: ['Stereo Vision', 'Deep Learning', 'OAK‑D', 'Edge AI', 'TTS'],
+      icon: Award,
+      color: 'from-emerald-500 to-teal-500',
+      year: '2023'
+    },
+    {
+      id: 'mole-1-0-special-prize-2025',
+      title: 'Mole 1.0 Hackathon – Special Prize Winner',
+      organization: 'Indra Ganesan Institutions (Internal Idea Event)',
+      date: '24 Mar 2025',
+      category: 'Hackathon',
+      description: 'Won the Special Prize for developing an AI-based communication and learning platform that translates Tamil Sign Language gestures into text and speech in real time.',
+      details: [
+        'Real‑time TSL to text/speech with interactive learning',
+        'Bridges communication gaps using AI and computer vision',
+        'Interactive sign-learning module to help bridge communication between deaf/mute individuals and the hearing community',
+        'Promoting inclusivity and accessibility through AI and computer vision'
+      ],
+      technologies: ['Python', 'Computer Vision', 'NLP', 'Web', 'Tamil Sign Language'],
+      icon: Award,
+      color: 'from-fuchsia-500 to-pink-500',
+      year: '2025'
+    },
+    {
+      id: 'typewriting-english-2023',
+      title: 'Government Technical Examination – Typewriting (English)',
+      organization: 'Dept. of Technical Education, Govt. of Tamil Nadu',
+      date: 'Feb 2023',
+      category: 'Certification',
+      description: 'Successfully completed the Junior Grade Typewriting in English with a speed of 30 words per minute, awarded First Class with Distinction by the Government of Tamil Nadu, Department of Technical Education.',
+      details: [
+        'Demonstrates high typing accuracy and documentation skills',
+        'This certification demonstrates strong typing accuracy, focus, and professional documentation skills',
+        'Completed with First Class with Distinction grade'
+      ],
+      technologies: ['English Typewriting', 'Documentation', 'Professional Skills'],
+      icon: GraduationCap,
+      color: 'from-indigo-500 to-purple-500',
+      year: '2023'
+    },
+    {
+      id: 'webots-competition-2024',
+      title: '1st Prize - Webots Competition',
+      organization: 'Indra Ganesan College of Engineering',
+      date: '2024',
+      category: 'Robotics',
+      description: 'Won First Prize in Webots Robotics Competition for developing autonomous navigation algorithms.',
+      details: [
+        'Developed autonomous navigation algorithms using Webots simulation',
+        'Implemented path planning and obstacle avoidance algorithms',
+        'Demonstrated expertise in robotics programming and simulation'
+      ],
+      technologies: ['Webots', 'Python', 'Robotics', 'Simulation', 'Navigation'],
+      icon: Trophy,
+      color: 'from-cyan-500 to-blue-500',
+      year: '2024'
+    },
+    {
+      id: 'ai-ml-certifications',
+      title: 'AI & ML Professional Certifications',
+      organization: 'Multiple Platforms',
+      date: '2022-2024',
+      category: 'Certification',
+      description: 'Earned multiple professional certifications in AI, Machine Learning, and Data Science.',
+      details: [
+        'Google AI/ML Fundamentals Certificate',
+        'IBM Data Science Professional Certificate',
+        'Microsoft Azure AI Fundamentals',
+        'TensorFlow Developer Certificate',
+        'Python for Data Science and Machine Learning'
+      ],
+      technologies: ['Python', 'TensorFlow', 'Azure', 'Machine Learning', 'Data Science'],
+      icon: Award,
+      color: 'from-purple-500 to-pink-500',
+      year: '2022-2024'
+    },
     {
       id: 'sih-2023-internal-finalist',
       title: 'Smart India Hackathon Finalist (Internal) – 2023',
@@ -359,23 +516,7 @@ const AboutPage = () => {
       technologies: ['Stereo Vision', 'Deep Learning', 'OAK-D', 'Edge AI', 'TTS'],
       icon: Award,
       color: 'from-emerald-500 to-teal-500',
-    },
-    {
-      id: 'project-expo-2024-2025',
-      title: '1st Prize - Project Expo',
-      organization: 'Indra Ganesan College of Engineering',
-      date: '2024 & 2025',
-      category: 'Innovation',
-      description: 'Won First Prize in Project Expo at Indra Ganesan College of Engineering, Trichy.',
-      details: [
-        'Demonstrated innovative project solutions',
-        'Showcased technical expertise and creativity',
-        'Competed against multiple teams and projects',
-        'Received recognition for outstanding project presentation'
-      ],
-      technologies: ['Project Development', 'Innovation', 'Technical Presentation', 'Problem Solving'],
-      icon: Trophy,
-      color: 'from-yellow-500 to-orange-500'
+      year: '2023'
     },
     {
       id: 'webots-neotrex-2024',
@@ -392,25 +533,8 @@ const AboutPage = () => {
       ],
       technologies: ['Web Development', 'HTML/CSS', 'JavaScript', 'React', 'Node.js'],
       icon: Award,
-      color: 'from-green-500 to-teal-500'
-    },
-    {
-      id: 'sih-2024-internal-finalist',
-      title: 'Smart India Hackathon Finalist (Internal) – 2024',
-      organization: 'Smart India Hackathon – Student Innovation',
-      date: '2024',
-      category: 'AI, Accessibility',
-      description:
-        'Proposed a real-time web platform enabling two-way translation between sign language and speech/text using AI, computer vision, NLP, and animated avatars. Designed for accessibility and inclusivity with gesture recognition, voice-to-sign conversion, and interactive learning modules.',
-      details: [
-        'Camera-based gesture recognition for live sign detection',
-        'Voice-to-sign conversion using NLP and 3D avatar animation',
-        'Interactive sign learning modules for education and practice',
-        'Scalable, web-based architecture for broad accessibility',
-      ],
-      technologies: ['Computer Vision', 'NLP', 'Web Platform', '3D Avatars'],
-      icon: Trophy,
-      color: 'from-sky-500 to-indigo-500',
+      color: 'from-green-500 to-teal-500',
+      year: '2024'
     },
     {
       id: 'srm-competitions-2024',
@@ -427,9 +551,25 @@ const AboutPage = () => {
       ],
       technologies: ['Technical Analysis', 'Problem Solving', 'Innovation', 'Creativity'],
       icon: GraduationCap,
-      color: 'from-indigo-500 to-purple-500'
+      color: 'from-indigo-500 to-purple-500',
+      year: '2024'
     }
   ];
+
+  // Group achievements by year for timeline view
+  const achievementsByYear = useMemo(() => {
+    const groups = {};
+    achievements.forEach((item) => {
+      const extracted = (item.date && item.date.match(/\d{4}/g)) || [];
+      const year = item.year || (extracted.length ? extracted[0] : 'Other');
+      if (!groups[year]) groups[year] = [];
+      groups[year].push(item);
+    });
+    // Sort years desc and items by title
+    return Object.entries(groups)
+      .sort((a, b) => Number(b[0]) - Number(a[0]))
+      .map(([year, items]) => [year, items.sort((x, y) => x.title.localeCompare(y.title))]);
+  }, [achievements]);
 
   // Optimized AOS initialization
   useEffect(() => {
@@ -633,16 +773,90 @@ const AboutPage = () => {
         )}
 
         {activeSection === 'achievements' && (
-          <div className="space-y-6 mt-8">
+          <div className="space-y-10 mt-8">
             <h3 className="text-2xl font-bold text-white text-center mb-8">Achievements & Awards</h3>
-            {achievements.map((achievement) => (
-              <AchievementCard
-                key={achievement.id}
-                achievement={achievement}
-                isExpanded={expandedCard === achievement.id}
-                onToggle={(id) => setExpandedCard(expandedCard === id ? null : id)}
-              />
-            ))}
+            <div className="relative">
+              {/* Timeline vertical line */}
+              <div className="absolute left-5 top-0 bottom-0 w-px bg-white/10" />
+
+              <div className="space-y-10">
+                {achievementsByYear.map(([year, items]) => (
+                  <div key={year} className="relative pl-14">
+                    {/* Year Node */}
+                    <div className="absolute left-1 top-1">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#6366f1] to-[#a855f7] flex items-center justify-center text-white font-bold shadow-lg">
+                        {year}
+                      </div>
+                    </div>
+
+                    {/* Year Section Card */}
+                    <div className="bg-gray-900/40 backdrop-blur-xl rounded-2xl border border-white/10 p-4 sm:p-6">
+                      <h4 className="text-lg font-semibold text-white mb-4">Highlights of {year}</h4>
+
+                      <div className="space-y-4">
+                        {items.map((achievement) => {
+                          const IconComp = achievement.icon;
+                          return (
+                            <div key={achievement.id} className="group bg-white/5 border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-colors">
+                              <div className="flex items-start justify-between gap-3">
+                                <div className="flex items-start gap-3">
+                                  <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${achievement.color} flex items-center justify-center flex-shrink-0`}>
+                                    <IconComp className="w-5 h-5 text-white" />
+                                  </div>
+                                  <div>
+                                    <div className="text-white font-semibold">
+                                      {achievement.title}
+                                    </div>
+                                    <div className="text-gray-400 text-sm">{achievement.organization}</div>
+                                  </div>
+                                </div>
+                                <button
+                                  onClick={() => setExpandedCard(expandedCard === achievement.id ? null : achievement.id)}
+                                  className="px-3 py-1.5 text-xs rounded-lg bg-white/10 hover:bg-white/20 text-gray-200 transition-colors"
+                                >
+                                  {expandedCard === achievement.id ? 'Hide' : 'View'}
+                                </button>
+                              </div>
+
+                              {expandedCard === achievement.id && (
+                                <div className="mt-4 border-t border-white/10 pt-4 animate-fadeIn">
+                                  <div className="flex items-center gap-3 text-sm text-gray-400 mb-3">
+                                    <div className="flex items-center gap-1"><Calendar className="w-4 h-4" />{achievement.date}</div>
+                                    <span className="px-2 py-1 bg-white/10 rounded-full text-xs">{achievement.category}</span>
+                                  </div>
+                                  <p className="text-gray-300 mb-3">{achievement.description}</p>
+                                  <div className="grid sm:grid-cols-2 gap-4">
+                                    <div>
+                                      <h5 className="text-sm font-semibold text-white mb-2">Project Details</h5>
+                                      <ul className="space-y-2">
+                                        {achievement.details.map((d, i) => (
+                                          <li key={i} className="flex items-start gap-2 text-gray-300">
+                                            <span className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full mt-2 flex-shrink-0" />
+                                            {d}
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                    <div>
+                                      <h5 className="text-sm font-semibold text-white mb-2">Technologies Used</h5>
+                                      <div className="flex flex-wrap gap-2">
+                                        {achievement.technologies.map((t, i) => (
+                                          <span key={i} className="px-3 py-1 bg-white/10 rounded-full text-xs text-gray-300">{t}</span>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
       </div>
