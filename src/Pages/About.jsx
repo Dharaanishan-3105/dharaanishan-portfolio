@@ -15,9 +15,32 @@ import {
   ExternalLink,
   ChevronDown,
   ChevronUp,
+  Eye,
 } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+// Views Counter Component
+const ViewsCounter = memo(() => {
+  const [views, setViews] = useState(0);
+
+  useEffect(() => {
+    // Get current views from localStorage or initialize
+    const currentViews = parseInt(localStorage.getItem('portfolioViews') || '0');
+    const newViews = currentViews + 1;
+    setViews(newViews);
+    localStorage.setItem('portfolioViews', newViews.toString());
+  }, []);
+
+  return (
+    <div className="fixed top-20 right-4 z-50 hidden lg:block">
+      <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-full px-4 py-2 flex items-center gap-2 shadow-lg">
+        <Eye className="w-4 h-4 text-purple-400" />
+        <span className="text-white text-sm font-medium">{views.toLocaleString()}</span>
+      </div>
+    </div>
+  );
+});
 
 // Memoized Components
 const Header = memo(() => (
@@ -342,7 +365,7 @@ const AboutPage = () => {
       id: 'shadowfox-ds-intern-2025',
       title: 'Data Science Intern — ShadowFox (MSME Initiative)',
       company: 'ShadowFox',
-      duration: 'Mar 2025',
+      duration: 'March 2025',
       location: 'Virtual',
       type: 'Internship',
       description: 'Completed a one-month virtual internship focusing on practical applications of Data Science across Beginner, Intermediate, and Advanced phases.',
@@ -364,7 +387,7 @@ const AboutPage = () => {
       id: 'science-tech-fest-2025',
       title: '1st Prize - Science Tech Fest 2025 (TechSynergy)',
       organization: 'Dhanalakshmi Srinivasan University, Tiruchirappalli',
-      date: '10th & 11th October 2025',
+      date: 'October 2025',
       category: 'Technical Excellence',
       description: 'Secured 1st Prize in the Technical Project Expo at Science Tech Fest 2025 (TechSynergy) for presenting NeethiAI, earning formal recognition for technical excellence and problem-solving impact.',
       details: [
@@ -382,7 +405,7 @@ const AboutPage = () => {
       id: 'project-expo-2024',
       title: '1st Prize - Project Expo',
       organization: 'Indra Ganesan College of Engineering',
-      date: '2024',
+      date: 'September 2024',
       category: 'Innovation',
       description: 'Won First Prize in Project Expo (2024) with "Fire Detection & Alert System".',
       details: [
@@ -398,7 +421,7 @@ const AboutPage = () => {
       id: 'project-expo-2025',
       title: '1st Prize - Project Expo',
       organization: 'Indra Ganesan College of Engineering',
-      date: '2025',
+      date: 'September 2025',
       category: 'Innovation',
       description: 'Won First Prize in Project Expo (2025) with "NeethiAI – A GenAI Legal Companion".',
       details: [
@@ -432,9 +455,9 @@ const AboutPage = () => {
       id: 'mole-1-0-special-prize-2025',
       title: 'Mole 1.0 Hackathon – Special Prize Winner',
       organization: 'Indra Ganesan Institutions (Internal Idea Event)',
-      date: '24 Mar 2025',
+      date: 'March 2025',
       category: 'Hackathon',
-      description: 'Won the Special Prize for developing an AI-based communication and learning platform that translates Tamil Sign Language gestures into text and speech in real time.',
+      description: 'Won the Special Prize for Proposing an AI-based communication and learning platform that translates Tamil Sign Language gestures into text and speech in real time.',
       details: [
         'Real‑time TSL to text/speech with interactive learning',
         'Bridges communication gaps using AI and computer vision',
@@ -450,7 +473,7 @@ const AboutPage = () => {
       id: 'typewriting-english-2023',
       title: 'Government Technical Examination – Typewriting (English)',
       organization: 'Dept. of Technical Education, Govt. of Tamil Nadu',
-      date: 'Feb 2023',
+      date: 'February 2023',
       category: 'Certification',
       description: 'Successfully completed the Junior Grade Typewriting in English with a speed of 30 words per minute, awarded First Class with Distinction by the Government of Tamil Nadu, Department of Technical Education.',
       details: [
@@ -483,10 +506,10 @@ const AboutPage = () => {
       year: '2023'
     },
     {
-      id: 'webots-neotrex-2024',
+      id: 'Neotrex-2024',
       title: '1st Prize - Webots (Web Development)',
       organization: 'M.A.M College of Engineering',
-      date: '2024',
+      date: 'October 2024',
       category: 'Web Development',
       description: 'Won 1st Prize in Webots (Web Development) competition at NEOTREX\'24.',
       details: [
@@ -504,7 +527,7 @@ const AboutPage = () => {
       id: 'srm-competitions-2024',
       title: '2nd Prize - Multiple Events',
       organization: 'SRM Valliammai Engineering College',
-      date: '2024',
+      date: 'October 2024',
       category: 'Competitions',
       description: 'Won 2nd Prize in both Analytix (Technical) and Flick Frenzy (Non-Technical) events.',
       details: [
@@ -622,6 +645,7 @@ const AboutPage = () => {
       className="h-auto pb-[10%] text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] mt-10 sm-mt-0"
       id="About"
     >
+      <ViewsCounter />
       <Header />
 
       <div className="w-full mx-auto pt-8 sm:pt-12 relative">

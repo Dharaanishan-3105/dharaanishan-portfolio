@@ -172,30 +172,33 @@ const Navbar = () => {
             style={{ top: "80px" }}
         >
             <div className="flex flex-col h-full">
-                <div className="px-4 py-8 space-y-6 flex-1 ">
-                    {navItems.map((item, index) => {
-                        const Icon = item.icon;
-                        return (
-                            <a
-                                key={item.label}
-                                href={item.href}
-                                onClick={(e) => scrollToSection(e, item.href)}
-                                className={`block px-4 py-3 text-lg font-medium transition-all duration-300 ease inline-flex items-center gap-3 ${
-                                    activeSection === item.href.substring(1)
-                                        ? "bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold"
-                                        : "text-[#e2d3fd] hover:text-white"
-                                }`}
-                                style={{
-                                    transitionDelay: `${index * 100}ms`,
-                                    transform: isOpen ? "translateX(0)" : "translateX(50px)",
-                                    opacity: isOpen ? 1 : 0,
-                                }}
-                            >
-                                <Icon className="w-5 h-5" />
-                                {item.label}
-                            </a>
-                        );
-                    })}
+                <div className="px-4 py-8 space-y-6 flex-1">
+                    <div className="grid grid-cols-1 gap-4">
+                        {navItems.map((item, index) => {
+                            const Icon = item.icon;
+                            const isActive = activeSection === item.href.substring(1);
+                            return (
+                                <a
+                                    key={item.label}
+                                    href={item.href}
+                                    onClick={(e) => scrollToSection(e, item.href)}
+                                    className={`block px-4 py-3 text-lg font-medium transition-all duration-300 ease inline-flex items-center gap-3 ${
+                                        isActive
+                                            ? "text-white font-semibold"
+                                            : "text-[#e2d3fd] hover:text-white"
+                                    }`}
+                                    style={{
+                                        transitionDelay: `${index * 100}ms`,
+                                        transform: isOpen ? "translateX(0)" : "translateX(50px)",
+                                        opacity: isOpen ? 1 : 0,
+                                    }}
+                                >
+                                    <Icon className={`w-5 h-5 ${isActive ? "text-white" : "text-[#e2d3fd]"}`} />
+                                    {item.label}
+                                </a>
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
         </div>
