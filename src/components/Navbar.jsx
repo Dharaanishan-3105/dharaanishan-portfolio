@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Home as HomeIcon, Info, FolderOpen, Phone } from "lucide-react";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -8,10 +8,10 @@ const Navbar = () => {
     const [hideName, setHideName] = useState(false);
     
     const navItems = [
-        { href: "#Home", label: "Home" },
-        { href: "#About", label: "About" },
-        { href: "#Portofolio", label: "Portofolio" },
-        { href: "#Contact", label: "Contact" },
+        { href: "#Home", label: "Home", icon: HomeIcon },
+        { href: "#About", label: "About", icon: Info },
+        { href: "#Portofolio", label: "Portofolio", icon: FolderOpen },
+        { href: "#Contact", label: "Contact", icon: Phone },
     ];
 
     useEffect(() => {
@@ -112,31 +112,35 @@ const Navbar = () => {
                 {/* Desktop Navigation */}
                 <div className="hidden md:block">
                     <div className="ml-8 flex items-center space-x-8">
-                        {navItems.map((item) => (
-                            <a
-                                key={item.label}
-                                href={item.href}
-                                onClick={(e) => scrollToSection(e, item.href)}
-                                className="group relative px-1 py-2 text-sm font-medium"
-                            >
-                                <span
-                                    className={`relative z-10 transition-colors duration-300 ${
-                                        activeSection === item.href.substring(1)
-                                            ? "bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold"
-                                            : "text-[#e2d3fd] group-hover:text-white"
-                                    }`}
+                        {navItems.map((item) => {
+                            const Icon = item.icon;
+                            return (
+                                <a
+                                    key={item.label}
+                                    href={item.href}
+                                    onClick={(e) => scrollToSection(e, item.href)}
+                                    className="group relative px-1 py-2 text-sm font-medium"
                                 >
-                                    {item.label}
-                                </span>
-                                <span
-                                    className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] transform origin-left transition-transform duration-300 ${
-                                        activeSection === item.href.substring(1)
-                                            ? "scale-x-100"
-                                            : "scale-x-0 group-hover:scale-x-100"
-                                    }`}
-                                />
-                            </a>
-                        ))}
+                                    <span
+                                        className={`relative z-10 transition-colors duration-300 inline-flex items-center gap-2 ${
+                                            activeSection === item.href.substring(1)
+                                                ? "bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold"
+                                                : "text-[#e2d3fd] group-hover:text-white"
+                                        }`}
+                                    >
+                                        <Icon className="w-4 h-4" />
+                                        {item.label}
+                                    </span>
+                                    <span
+                                        className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] transform origin-left transition-transform duration-300 ${
+                                            activeSection === item.href.substring(1)
+                                                ? "scale-x-100"
+                                                : "scale-x-0 group-hover:scale-x-100"
+                                        }`}
+                                    />
+                                </a>
+                            );
+                        })}
                     </div>
                 </div>
     
@@ -169,25 +173,29 @@ const Navbar = () => {
         >
             <div className="flex flex-col h-full">
                 <div className="px-4 py-8 space-y-6 flex-1 ">
-                    {navItems.map((item, index) => (
-                        <a
-                            key={item.label}
-                            href={item.href}
-                            onClick={(e) => scrollToSection(e, item.href)}
-                            className={`block px-4 py-3 text-lg font-medium transition-all duration-300 ease ${
-                                activeSection === item.href.substring(1)
-                                    ? "bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold"
-                                    : "text-[#e2d3fd] hover:text-white"
-                            }`}
-                            style={{
-                                transitionDelay: `${index * 100}ms`,
-                                transform: isOpen ? "translateX(0)" : "translateX(50px)",
-                                opacity: isOpen ? 1 : 0,
-                            }}
-                        >
-                            {item.label}
-                        </a>
-                    ))}
+                    {navItems.map((item, index) => {
+                        const Icon = item.icon;
+                        return (
+                            <a
+                                key={item.label}
+                                href={item.href}
+                                onClick={(e) => scrollToSection(e, item.href)}
+                                className={`block px-4 py-3 text-lg font-medium transition-all duration-300 ease inline-flex items-center gap-3 ${
+                                    activeSection === item.href.substring(1)
+                                        ? "bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold"
+                                        : "text-[#e2d3fd] hover:text-white"
+                                }`}
+                                style={{
+                                    transitionDelay: `${index * 100}ms`,
+                                    transform: isOpen ? "translateX(0)" : "translateX(50px)",
+                                    opacity: isOpen ? 1 : 0,
+                                }}
+                            >
+                                <Icon className="w-5 h-5" />
+                                {item.label}
+                            </a>
+                        );
+                    })}
                 </div>
             </div>
         </div>

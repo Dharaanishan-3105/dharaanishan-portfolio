@@ -361,6 +361,24 @@ const AboutPage = () => {
   // Achievements Data
   const achievements = [
     {
+      id: 'science-tech-fest-2025',
+      title: '1st Prize - Science Tech Fest 2025 (TechSynergy)',
+      organization: 'Dhanalakshmi Srinivasan University, Tiruchirappalli',
+      date: '10th & 11th October 2025',
+      category: 'Technical Excellence',
+      description: 'Secured 1st Prize in the Technical Project Expo at Science Tech Fest 2025 (TechSynergy) for presenting NeethiAI, earning formal recognition for technical excellence and problem-solving impact.',
+      details: [
+        'Presented innovative NeethiAI project at Science Tech Fest 2025',
+        'Secured 1st Prize in Technical Project Expo category',
+        'Represented Indira Ganesan College at the event',
+        'Earned formal recognition for technical excellence and problem-solving impact'
+      ],
+      technologies: ['AI', 'Machine Learning', 'Legal Tech', 'Innovation'],
+      icon: Trophy,
+      color: 'from-amber-500 to-yellow-500',
+      year: '2025'
+    },
+    {
       id: 'project-expo-2024',
       title: '1st Prize - Project Expo',
       organization: 'Indra Ganesan College of Engineering',

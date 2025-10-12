@@ -175,6 +175,7 @@ export default function FullWidthTabs() {
   const [certificates, setCertificates] = useState([]);
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [showAllCertificates, setShowAllCertificates] = useState(false);
+  const [showAllTechStack, setShowAllTechStack] = useState(false);
   const isMobile = window.innerWidth < 768;
   const initialItems = isMobile ? 4 : 6;
 
@@ -248,13 +249,16 @@ export default function FullWidthTabs() {
   const toggleShowMore = useCallback((type) => {
     if (type === 'projects') {
       setShowAllProjects(prev => !prev);
-    } else {
+    } else if (type === 'certificates') {
       setShowAllCertificates(prev => !prev);
+    } else if (type === 'techstack') {
+      setShowAllTechStack(prev => !prev);
     }
   }, []);
 
   const displayedProjects = showAllProjects ? projects : projects.slice(0, initialItems);
   const displayedCertificates = showAllCertificates ? certificates : certificates.slice(0, initialItems);
+  const displayedTechStack = showAllTechStack ? techStacks : techStacks.slice(0, 12);
 
   return (
     <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden" id="Portofolio">
@@ -368,195 +372,213 @@ export default function FullWidthTabs() {
         <div className="tab-content">
           <TabPanel value={value} index={0} dir={theme.direction}>
             <div className="container mx-auto flex justify-center items-center overflow-hidden">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
-                {/* NeethiAI - Legal AI Chatbot */}
-                <div
-                  data-aos="fade-up-right"
-                  data-aos-duration="1000"
-                >
-                  <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
-                    <div className="relative">
-                      <img src="/projects/neethi-ai.png" alt="NeethiAI" className="w-full h-40 object-cover" />
-                      <div className="absolute top-3 right-3 flex gap-2">
-                        <span className="px-2 py-0.5 text-[10px] rounded-full bg-pink-500/20 text-pink-300 border border-pink-400/30">FEATURED</span>
-                        <span className="px-2 py-0.5 text-[10px] rounded-full bg-green-500/20 text-green-300 border border-green-400/30">NEW</span>
+              <div className="w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
+                  {/* NeethiAI - Legal AI Chatbot */}
+                  <div
+                    data-aos="fade-up-right"
+                    data-aos-duration="1000"
+                  >
+                    <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
+                      <div className="relative">
+                        <img src="/projects/neethi-ai.png" alt="NeethiAI" className="w-full h-40 object-cover" />
+                        <div className="absolute top-3 right-3 flex gap-2">
+                          <span className="px-2 py-0.5 text-[10px] rounded-full bg-pink-500/20 text-pink-300 border border-pink-400/30">FEATURED</span>
+                          <span className="px-2 py-0.5 text-[10px] rounded-full bg-green-500/20 text-green-300 border border-green-400/30">NEW</span>
+                        </div>
                       </div>
-                    </div>
-                    <div className="p-6">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-xl font-bold text-white">NeethiAI – Legal AI Chatbot</h3>
-                        <span className="text-[11px] text-gray-300 bg-white/5 rounded-full px-2 py-0.5 border border-white/10">2024 – 2025</span>
-                      </div>
-                      <p className="text-gray-300 text-sm mb-4">A GenAI-based legal assistant that answers legal queries in English/Tamil, summarizes legal documents, detects fake notices, and provides tax/legal guidance using verified government sources.</p>
-                      <div className="flex flex-wrap gap-2 mb-5">
-                        <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">Python</span>
-                        <span className="px-2 py-1 bg-green-500/20 text-green-300 text-xs rounded">Flask</span>
-                        <span className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded">PostgreSQL</span>
-                        <span className="px-2 py-1 bg-orange-500/20 text-orange-300 text-xs rounded">HTML/CSS</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <button onClick={() => setActiveProject({
-                          Title: 'NeethiAI – Legal AI Chatbot',
-                          Description: 'A GenAI-based legal assistant that answers legal queries in English/Tamil, summarizes legal documents, detects fake notices, and provides tax/legal guidance using verified government sources.',
-                          Img: '/projects/neethi-ai.png',
-                          TechStack: ['Python','Flask','PostgreSQL','HTML/CSS'],
-                          Features: [
-                            'Bilingual Q&A (English/Tamil)',
-                            'Legal document summarization',
-                            'Fake notice detection',
-                            'Government-source backed answers'
-                          ],
-                          Github: 'https://github.com/Dharaanishan-3105/NeethiAI-Legal-Chatbot'
-                        })} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-200 text-sm border border-white/10">Project details</button>
-                        <a href="https://github.com/Dharaanishan-3105/NeethiAI-Legal-Chatbot" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm font-medium">View Project →</a>
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-2">
+                          <h3 className="text-xl font-bold text-white">NeethiAI – Legal AI Chatbot</h3>
+                          <span className="text-[11px] text-gray-300 bg-white/5 rounded-full px-2 py-0.5 border border-white/10">2024 – 2025</span>
+                        </div>
+                        <p className="text-gray-300 text-sm mb-4">A GenAI-based legal assistant that answers legal queries in English/Tamil, summarizes legal documents, detects fake notices, and provides tax/legal guidance using verified government sources.</p>
+                        <div className="flex flex-wrap gap-2 mb-5">
+                          <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">Python</span>
+                          <span className="px-2 py-1 bg-green-500/20 text-green-300 text-xs rounded">Flask</span>
+                          <span className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded">PostgreSQL</span>
+                          <span className="px-2 py-1 bg-orange-500/20 text-orange-300 text-xs rounded">HTML/CSS</span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <button onClick={() => setActiveProject({
+                            Title: 'NeethiAI – Legal AI Chatbot',
+                            Description: 'A GenAI-based legal assistant that answers legal queries in English/Tamil, summarizes legal documents, detects fake notices, and provides tax/legal guidance using verified government sources.',
+                            Img: '/projects/neethi-ai.png',
+                            TechStack: ['Python','Flask','PostgreSQL','HTML/CSS'],
+                            Features: [
+                              'Bilingual Q&A (English/Tamil)',
+                              'Legal document summarization',
+                              'Fake notice detection',
+                              'Government-source backed answers'
+                            ],
+                            Github: 'https://github.com/Dharaanishan-3105/NeethiAI-Legal-Chatbot'
+                          })} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-200 text-sm border border-white/10">Project details</button>
+                          <a href="https://github.com/Dharaanishan-3105/NeethiAI-Legal-Chatbot" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm font-medium">View Project →</a>
+                        </div>
                       </div>
                     </div>
                   </div>
+
+                  {/* HealthSync – Hospital Management System */}
+                  <div
+                    data-aos="fade-up"
+                    data-aos-duration="1200"
+                  >
+                    <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
+                      <div className="relative">
+                        <img src="/projects/healthsync.png" alt="HealthSync" className="w-full h-40 object-cover" />
+                      </div>
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-2">
+                          <h3 className="text-xl font-bold text-white">HealthSync – Hospital Management System</h3>
+                          <span className="text-[11px] text-gray-300 bg-white/5 rounded-full px-2 py-0.5 border border-white/10">2024</span>
+                        </div>
+                        <p className="text-gray-300 text-sm mb-4">A web-based platform to manage patient records, doctor appointments, and prescriptions securely. Automates hospital operations with role-based access for patients, doctors, and staff.</p>
+                        <div className="flex flex-wrap gap-2 mb-5">
+                          <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">Python</span>
+                          <span className="px-2 py-1 bg-green-500/20 text-green-300 text-xs rounded">Flask</span>
+                          <span className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded">PostgreSQL</span>
+                          <span className="px-2 py-1 bg-pink-500/20 text-pink-300 text-xs rounded">Machine Learning</span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <button onClick={() => setActiveProject({
+                            Title: 'HealthSync – Hospital Management System',
+                            Description: 'A web-based platform to manage patient records, doctor appointments, and prescriptions securely. Automates hospital operations with role-based access for patients, doctors, and staff.',
+                            Img: '/projects/healthsync.png',
+                            TechStack: ['Python','Flask','PostgreSQL','Machine Learning'],
+                            Features: ['Patient management','Appointments','Prescriptions','Role-based access'],
+                            Github: 'https://github.com/Dharaanishan-3105/HealthSync-Hospital-Management'
+                          })} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-200 text-sm border border-white/10">Project details</button>
+                          <a href="https://github.com/Dharaanishan-3105/HealthSync-Hospital-Management" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm font-medium">View Project →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Fire Detection & Alert System */}
+                  <div
+                    data-aos="fade-up-left"
+                    data-aos-duration="1000"
+                  >
+                    <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
+                      <div className="relative">
+                        <img src="/projects/fire-detection.png" alt="Fire Detection & Alert System" className="w-full h-40 object-cover" />
+                      </div>
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-2">
+                          <h3 className="text-xl font-bold text-white">Fire Detection & Alert System</h3>
+                          <span className="text-[11px] text-gray-300 bg-white/5 rounded-full px-2 py-0.5 border border-white/10">2024</span>
+                        </div>
+                        <p className="text-gray-300 text-sm mb-4">Real-time AI-based system that detects fire through camera feed and instantly triggers an audible alarm and sends email alerts. Logs all detection events and provides configurable sensitivity for flexible deployment in homes, offices, or industries.</p>
+                        <div className="flex flex-wrap gap-2 mb-5">
+                          <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">Python</span>
+                          <span className="px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded">OpenCV</span>
+                          <span className="px-2 py-1 bg-pink-500/20 text-pink-300 text-xs rounded">Deep Learning</span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <button onClick={() => setActiveProject({
+                            Title: 'Fire Detection & Alert System',
+                            Description: 'Real-time AI-based system that detects fire through camera feed and instantly triggers an audible alarm and sends email alerts. Logs all detection events and provides configurable sensitivity for flexible deployment in homes, offices, or industries.',
+                            Img: '/projects/fire-detection.png',
+                            TechStack: ['Python','OpenCV','Deep Learning'],
+                            Features: [
+                              'Real-time fire detection from camera stream',
+                              'Audible alarm and email notification',
+                              'Event logging with timestamps',
+                              'Configurable sensitivity for different environments'
+                            ],
+                            Github: 'https://github.com/Dharaanishan-3105/Fire-Detection-Alert-System'
+                          })} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-200 text-sm border border-white/10">Project details</button>
+                          <a href="https://github.com/Dharaanishan-3105/Fire-Detection-Alert-System" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm font-medium">View Project →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Show more projects when expanded */}
+                  {showAllProjects && (
+                    <>
+                      {/* Face Recognition Attendance System */}
+                      <div
+                        data-aos="fade-up-right"
+                        data-aos-duration="1000"
+                      >
+                        <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
+                          <img src="/projects/attendance.png" alt="Face Recognition Attendance" className="w-full h-40 object-cover" />
+                          <div className="mb-4">
+                            <div className="flex items-center justify-between mb-2 px-6 mt-4">
+                              <h3 className="text-xl font-bold text-white">Face Recognition Attendance System</h3>
+                              <span className="text-[11px] text-gray-300 bg-white/5 rounded-full px-2 py-0.5 border border-white/10">2024</span>
+                            </div>
+                            <p className="text-gray-300 text-sm mb-4 px-6">
+                              Automated student attendance using real-time face detection and recognition. Marks IN/OUT time, stores records in a database, and exports daily reports to Excel.
+                            </p>
+                            <div className="flex flex-wrap gap-2 mb-4 px-6">
+                              <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">Python</span>
+                              <span className="px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded">OpenCV</span>
+                              <span className="px-2 py-1 bg-yellow-500/20 text-yellow-300 text-xs rounded">SQLite</span>
+                            </div>
+                            <div className="px-6 pb-6 flex items-center justify-between">
+                              <button onClick={() => setActiveProject({
+                                Title: 'Face Recognition Attendance System',
+                                Description: 'Automated student attendance using real-time face detection and recognition. Marks IN/OUT time, stores records in a database, and exports daily reports to Excel.',
+                                Img: '/projects/attendance.png',
+                                TechStack: ['Python','OpenCV','SQLite'],
+                                Features: ['Real-time detection','Attendance logs','Excel export'],
+                                Github: 'https://github.com/Dharaanishan-3105/Face-Recognition-Attendance'
+                              })} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-200 text-sm border border-white/10">Project details</button>
+                              <a href="https://github.com/Dharaanishan-3105/Face-Recognition-Attendance" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm font-medium">View Project →</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Object Detection Mobile App */}
+                      <div
+                        data-aos="fade-up-left"
+                        data-aos-duration="1200"
+                      >
+                        <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
+                          <img src="/projects/object-detection.png" alt="Object Detection App" className="w-full h-40 object-cover" />
+                          <div className="mb-4">
+                            <div className="flex items-center justify-between mb-2 px-6 mt-4">
+                              <h3 className="text-xl font-bold text-white">Object Detection Mobile App</h3>
+                              <span className="text-[11px] text-gray-300 bg-white/5 rounded-full px-2 py-0.5 border border-white/10">2025</span>
+                            </div>
+                            <p className="text-gray-300 text-sm mb-4 px-6">
+                              Real-time mobile app for object detection with camera input. Provides bounding boxes, confidence scores, and Text-to-Speech feedback, optimized for Android devices.
+                            </p>
+                            <div className="flex flex-wrap gap-2 mb-4 px-6">
+                              <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">Python</span>
+                              <span className="px-2 py-1 bg-orange-500/20 text-orange-300 text-xs rounded">TensorFlow Lite</span>
+                              <span className="px-2 py-1 bg-green-500/20 text-green-300 text-xs rounded">Android Studio</span>
+                              <span className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded">Gradle</span>
+                            </div>
+                            <div className="px-6 pb-6 flex items-center justify-between">
+                              <button onClick={() => setActiveProject({
+                                Title: 'Object Detection Mobile App',
+                                Description: 'Real-time mobile app for object detection with camera input. Provides bounding boxes, confidence scores, and Text-to-Speech feedback, optimized for Android devices.',
+                                Img: '/projects/object-detection.png',
+                                TechStack: ['Python','TensorFlow Lite','Android Studio','Gradle'],
+                                Features: ['Realtime bounding boxes','TTS feedback','Device optimized'],
+                                Github: 'https://github.com/Dharaanishan-3105/Object-Detection-Mobile-App'
+                              })} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-200 text-sm border border-white/10">Project details</button>
+                              <a href="https://github.com/Dharaanishan-3105/Object-Detection-Mobile-App" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm font-medium">View Project →</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
 
-                {/* HealthSync – Hospital Management System */}
-                <div
-                  data-aos="fade-up"
-                  data-aos-duration="1200"
-                >
-                  <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
-                    <div className="relative">
-                      <img src="/projects/healthsync.png" alt="HealthSync" className="w-full h-40 object-cover" />
-                    </div>
-                    <div className="p-6">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-xl font-bold text-white">HealthSync – Hospital Management System</h3>
-                        <span className="text-[11px] text-gray-300 bg-white/5 rounded-full px-2 py-0.5 border border-white/10">2024</span>
-                      </div>
-                      <p className="text-gray-300 text-sm mb-4">A web-based platform to manage patient records, doctor appointments, and prescriptions securely. Automates hospital operations with role-based access for patients, doctors, and staff.</p>
-                      <div className="flex flex-wrap gap-2 mb-5">
-                        <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">Python</span>
-                        <span className="px-2 py-1 bg-green-500/20 text-green-300 text-xs rounded">Flask</span>
-                        <span className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded">PostgreSQL</span>
-                        <span className="px-2 py-1 bg-pink-500/20 text-pink-300 text-xs rounded">Machine Learning</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <button onClick={() => setActiveProject({
-                          Title: 'HealthSync – Hospital Management System',
-                          Description: 'A web-based platform to manage patient records, doctor appointments, and prescriptions securely. Automates hospital operations with role-based access for patients, doctors, and staff.',
-                          Img: '/projects/healthsync.png',
-                          TechStack: ['Python','Flask','PostgreSQL','Machine Learning'],
-                          Features: ['Patient management','Appointments','Prescriptions','Role-based access'],
-                          Github: 'https://github.com/Dharaanishan-3105/HealthSync-Hospital-Management'
-                        })} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-200 text-sm border border-white/10">Project details</button>
-                        <a href="https://github.com/Dharaanishan-3105/HealthSync-Hospital-Management" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm font-medium">View Project →</a>
-                      </div>
-                    </div>
-                  </div>
+                {/* See More Button for Projects */}
+                <div className="flex justify-center mt-8">
+                  <ToggleButton 
+                    onClick={() => toggleShowMore('projects')} 
+                    isShowingMore={showAllProjects} 
+                  />
                 </div>
-
-                {/* Face Recognition Attendance System */}
-                <div
-                  data-aos="fade-up-left"
-                  data-aos-duration="1000"
-                >
-                  <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
-                    <img src="/projects/attendance.png" alt="Face Recognition Attendance" className="w-full h-40 object-cover" />
-                    <div className="mb-4">
-                      <div className="flex items-center justify-between mb-2 px-6 mt-4">
-                        <h3 className="text-xl font-bold text-white">Face Recognition Attendance System</h3>
-                        <span className="text-[11px] text-gray-300 bg-white/5 rounded-full px-2 py-0.5 border border-white/10">2024</span>
-                      </div>
-                      <p className="text-gray-300 text-sm mb-4 px-6">
-                        Automated student attendance using real-time face detection and recognition. Marks IN/OUT time, stores records in a database, and exports daily reports to Excel.
-                      </p>
-                      <div className="flex flex-wrap gap-2 mb-4 px-6">
-                        <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">Python</span>
-                        <span className="px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded">OpenCV</span>
-                        <span className="px-2 py-1 bg-yellow-500/20 text-yellow-300 text-xs rounded">SQLite</span>
-                      </div>
-                      <div className="px-6 pb-6 flex items-center justify-between">
-                        <button onClick={() => setActiveProject({
-                          Title: 'Face Recognition Attendance System',
-                          Description: 'Automated student attendance using real-time face detection and recognition. Marks IN/OUT time, stores records in a database, and exports daily reports to Excel.',
-                          Img: '/projects/attendance.png',
-                          TechStack: ['Python','OpenCV','SQLite'],
-                          Features: ['Real-time detection','Attendance logs','Excel export'],
-                          Github: 'https://github.com/Dharaanishan-3105/Face-Recognition-Attendance'
-                        })} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-200 text-sm border border-white/10">Project details</button>
-                        <a href="https://github.com/Dharaanishan-3105/Face-Recognition-Attendance" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm font-medium">View Project →</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Object Detection Mobile App */}
-                <div
-                  data-aos="fade-up-right"
-                  data-aos-duration="1200"
-                >
-                  <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
-                    <img src="/projects/object-detection.png" alt="Object Detection App" className="w-full h-40 object-cover" />
-                    <div className="mb-4">
-                      <div className="flex items-center justify-between mb-2 px-6 mt-4">
-                        <h3 className="text-xl font-bold text-white">Object Detection Mobile App</h3>
-                        <span className="text-[11px] text-gray-300 bg-white/5 rounded-full px-2 py-0.5 border border-white/10">2025</span>
-                      </div>
-                      <p className="text-gray-300 text-sm mb-4 px-6">
-                        Real-time mobile app for object detection with camera input. Provides bounding boxes, confidence scores, and Text-to-Speech feedback, optimized for Android devices.
-                      </p>
-                      <div className="flex flex-wrap gap-2 mb-4 px-6">
-                        <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">Python</span>
-                        <span className="px-2 py-1 bg-orange-500/20 text-orange-300 text-xs rounded">TensorFlow Lite</span>
-                        <span className="px-2 py-1 bg-green-500/20 text-green-300 text-xs rounded">Android Studio</span>
-                        <span className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded">Gradle</span>
-                      </div>
-                      <div className="px-6 pb-6 flex items-center justify-between">
-                        <button onClick={() => setActiveProject({
-                          Title: 'Object Detection Mobile App',
-                          Description: 'Real-time mobile app for object detection with camera input. Provides bounding boxes, confidence scores, and Text-to-Speech feedback, optimized for Android devices.',
-                          Img: '/projects/object-detection.png',
-                          TechStack: ['Python','TensorFlow Lite','Android Studio','Gradle'],
-                          Features: ['Realtime bounding boxes','TTS feedback','Device optimized'],
-                          Github: 'https://github.com/Dharaanishan-3105/Object-Detection-Mobile-App'
-                        })} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-200 text-sm border border-white/10">Project details</button>
-                        <a href="https://github.com/Dharaanishan-3105/Object-Detection-Mobile-App" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm font-medium">View Project →</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              {/* Fire Detection & Alert System */}
-              <div data-aos="fade-up" data-aos-duration="1100">
-                <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
-                  <div className="relative">
-                    <img src="/projects/fire-detection.png" alt="Fire Detection & Alert System" className="w-full h-40 object-cover" />
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-xl font-bold text-white">Fire Detection & Alert System</h3>
-                      <span className="text-[11px] text-gray-300 bg-white/5 rounded-full px-2 py-0.5 border border-white/10">2024</span>
-                    </div>
-                    <p className="text-gray-300 text-sm mb-4">Real-time AI-based system that detects fire through camera feed and instantly triggers an audible alarm and sends email alerts. Logs all detection events and provides configurable sensitivity for flexible deployment in homes, offices, or industries.</p>
-                    <div className="flex flex-wrap gap-2 mb-5">
-                      <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">Python</span>
-                      <span className="px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded">OpenCV</span>
-                      <span className="px-2 py-1 bg-pink-500/20 text-pink-300 text-xs rounded">Deep Learning</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <button onClick={() => setActiveProject({
-                        Title: 'Fire Detection & Alert System',
-                        Description: 'Real-time AI-based system that detects fire through camera feed and instantly triggers an audible alarm and sends email alerts. Logs all detection events and provides configurable sensitivity for flexible deployment in homes, offices, or industries.',
-                        Img: '/projects/fire-detection.png',
-                        TechStack: ['Python','OpenCV','Deep Learning'],
-                        Features: [
-                          'Real-time fire detection from camera stream',
-                          'Audible alarm and email notification',
-                          'Event logging with timestamps',
-                          'Configurable sensitivity for different environments'
-                        ],
-                        Github: 'https://github.com/Dharaanishan-3105/Fire-Detection-Alert-System'
-                      })} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-200 text-sm border border-white/10">Project details</button>
-                      <a href="https://github.com/Dharaanishan-3105/Fire-Detection-Alert-System" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm font-medium">View Project →</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
               </div>
             </div>
           </TabPanel>
@@ -590,10 +612,10 @@ export default function FullWidthTabs() {
                         AI & Machine Learning
                       </h4>
                       <ul className="text-gray-300 text-sm space-y-1">
-                        <li>• Google AI/ML Fundamentals</li>
-                        <li>• IBM Data Science Professional</li>
-                        <li>• Microsoft Azure AI Fundamentals</li>
-                        <li>• TensorFlow Developer Certificate</li>
+                        <li>• .</li>
+                        <li>• .</li>
+                        <li>• .</li>
+                        <li>• .</li>
                       </ul>
                     </div>
                     
@@ -603,10 +625,10 @@ export default function FullWidthTabs() {
                         Web Development
                       </h4>
                       <ul className="text-gray-300 text-sm space-y-1">
-                        <li>• FreeCodeCamp Full Stack</li>
-                        <li>• The Odin Project Web Dev</li>
-                        <li>• Meta Front-End Developer</li>
-                        <li>• React Developer Certificate</li>
+                        <li>• .</li>
+                        <li>• .</li>
+                        <li>• .</li>
+                        <li>• .</li>
                       </ul>
                     </div>
                     
@@ -616,10 +638,10 @@ export default function FullWidthTabs() {
                         Data Science
                       </h4>
                       <ul className="text-gray-300 text-sm space-y-1">
-                        <li>• IBM Data Science Professional</li>
-                        <li>• Google Data Analytics</li>
-                        <li>• Coursera ML Specialization</li>
-                        <li>• Python for Data Science</li>
+                        <li>• .</li>
+                        <li>• .</li>
+                        <li>• .</li>
+                        <li>• .</li>
                       </ul>
                     </div>
                     
@@ -629,10 +651,10 @@ export default function FullWidthTabs() {
                         Cloud & Tools
                       </h4>
                       <ul className="text-gray-300 text-sm space-y-1">
-                        <li>• AWS Cloud Practitioner</li>
-                        <li>• Google Cloud Platform</li>
-                        <li>• Docker & Kubernetes</li>
-                        <li>• Git & Version Control</li>
+                        <li>• .</li>
+                        <li>• .</li>
+                        <li>• .</li>
+                        <li>• .</li>
                       </ul>
                     </div>
                   </div>
@@ -742,16 +764,26 @@ export default function FullWidthTabs() {
 
           <TabPanel value={value} index={2} dir={theme.direction}>
             <div className="container mx-auto flex justify-center items-center overflow-hidden pb-[5%]">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
-                {techStacks.map((stack, index) => (
-                  <div
-                    key={index}
-                    data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
-                    data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
-                  >
-                    <TechStackIcon TechStackIcon={stack.icon} Language={stack.language} />
-                  </div>
-                ))}
+              <div className="w-full">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
+                  {displayedTechStack.map((stack, index) => (
+                    <div
+                      key={index}
+                      data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                      data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
+                    >
+                      <TechStackIcon TechStackIcon={stack.icon} Language={stack.language} />
+                    </div>
+                  ))}
+                </div>
+
+                {/* See More Button for Tech Stack */}
+                <div className="flex justify-center mt-8">
+                  <ToggleButton 
+                    onClick={() => toggleShowMore('techstack')} 
+                    isShowingMore={showAllTechStack} 
+                  />
+                </div>
               </div>
             </div>
           </TabPanel>
