@@ -52,7 +52,7 @@ const ViewsCounter = memo(() => {
   if (!isVisible) return null;
 
   return (
-    <div className="absolute top-20 right-4 z-50 hidden lg:block">
+    <div className="fixed top-20 right-4 z-50 block">
       <div className="relative group animate-float">
         {/* Floating background glow */}
         <div className="absolute -inset-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-xl opacity-60 animate-pulse"></div>
