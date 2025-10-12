@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Home as HomeIcon, Info, FolderOpen, Phone } from 'lucide-react';
 import "./index.css";
 import Home from "./Pages/Home";
@@ -11,6 +11,38 @@ import ContactPage from "./Pages/Contact";
 import ProjectDetails from "./components/ProjectDetail";
 import WelcomeScreen from "./Pages/WelcomeScreen";
 import { AnimatePresence } from 'framer-motion';
+
+// Scroll to top button component
+const ScrollToTopButton = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const homeSection = document.getElementById('Home');
+      if (homeSection) {
+        const rect = homeSection.getBoundingClientRect();
+        const isInHomeSection = rect.top <= 0 && rect.bottom > window.innerHeight;
+        setIsVisible(!isInHomeSection);
+      }
+    };
+
+    handleScroll(); // Check initially
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  if (!isVisible) return null;
+
+  return (
+    <button
+      aria-label="Scroll to top"
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      className="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-lg border border-white/10 hover:scale-105 transition-transform"
+    >
+      ↑
+    </button>
+  );
+};
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
@@ -102,14 +134,8 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
               © 2025 Dharaanishan. Built with ❤ using modern web technologies
             </div>
 
-            {/* Scroll-to-top Arrow */}
-            <button
-              aria-label="Scroll to top"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-lg border border-white/10 hover:scale-105 transition-transform"
-            >
-              ↑
-            </button>
+            {/* Scroll-to-top Arrow - Only show when not on home section */}
+            <ScrollToTopButton />
           </footer>
         </>
       )}

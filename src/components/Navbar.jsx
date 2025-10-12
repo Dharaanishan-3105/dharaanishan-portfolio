@@ -124,12 +124,22 @@ const Navbar = () => {
                                     <span
                                         className={`relative z-10 transition-colors duration-300 inline-flex items-center gap-2 ${
                                             activeSection === item.href.substring(1)
-                                                ? "bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold"
+                                                ? "text-white font-semibold"
                                                 : "text-[#e2d3fd] group-hover:text-white"
                                         }`}
                                     >
-                                        <Icon className="w-4 h-4" />
-                                        {item.label}
+                                        <Icon className={`w-4 h-4 ${
+                                            activeSection === item.href.substring(1)
+                                                ? "text-white"
+                                                : "text-[#e2d3fd] group-hover:text-white"
+                                        }`} />
+                                        <span className={
+                                            activeSection === item.href.substring(1)
+                                                ? "bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent"
+                                                : ""
+                                        }>
+                                            {item.label}
+                                        </span>
                                     </span>
                                     <span
                                         className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] transform origin-left transition-transform duration-300 ${

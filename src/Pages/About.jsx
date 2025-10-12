@@ -52,28 +52,29 @@ const ViewsCounter = memo(() => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed top-20 right-4 z-50 hidden lg:block">
-      <div className="relative group">
-        {/* Animated background glow */}
-        <div className="absolute -inset-2 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+    <div className="absolute top-20 right-4 z-50 hidden lg:block">
+      <div className="relative group animate-float">
+        {/* Floating background glow */}
+        <div className="absolute -inset-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-xl opacity-60 animate-pulse"></div>
         
-        {/* Main counter container */}
-        <div className="relative bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-full px-4 py-2 flex items-center gap-2 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
-          {/* Animated eye icon */}
+        {/* Main counter container with floating effect */}
+        <div className="relative bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-full px-4 py-2 flex items-center gap-2 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 transform hover:-translate-y-1">
+          {/* Floating eye icon */}
           <div className="relative">
             <Eye className="w-4 h-4 text-purple-400 group-hover:text-pink-400 transition-colors duration-300 animate-pulse" />
             {/* Floating particles around eye */}
-            <div className="absolute -top-1 -right-1 w-1 h-1 bg-purple-400 rounded-full animate-bounce opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="absolute -bottom-1 -left-1 w-1 h-1 bg-pink-400 rounded-full animate-bounce opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animationDelay: '0.2s'}}></div>
+            <div className="absolute -top-1 -right-1 w-1 h-1 bg-purple-400 rounded-full animate-bounce opacity-70"></div>
+            <div className="absolute -bottom-1 -left-1 w-1 h-1 bg-pink-400 rounded-full animate-bounce opacity-70" style={{animationDelay: '0.2s'}}></div>
+            <div className="absolute top-0 -left-1 w-1 h-1 bg-blue-400 rounded-full animate-bounce opacity-50" style={{animationDelay: '0.4s'}}></div>
           </div>
           
-          {/* Views count with animation */}
+          {/* Views count with floating animation */}
           <span className="text-white text-sm font-medium group-hover:text-purple-200 transition-colors duration-300">
             {views.toLocaleString()}
           </span>
           
-          {/* Subtle shimmer effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
+          {/* Floating shimmer effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-full opacity-60 animate-pulse"></div>
         </div>
       </div>
     </div>
@@ -395,7 +396,7 @@ const AboutPage = () => {
         'Worked on real-world development tasks and projects',
         'Completed comprehensive web development training program'
       ],
-      technologies: ['HTML/CSS', 'JavaScript', 'React', 'Node.js', 'Web Development'],
+      technologies: ['HTML/CSS', 'JavaScript', 'Web Development'],
       icon: Briefcase,
       color: 'from-blue-500 to-cyan-500'
     },
@@ -923,6 +924,9 @@ const AboutPage = () => {
         }
         .animate-fadeIn {
           animation: fadeIn 0.5s ease-out;
+        }
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
         }
       `}</style>
     </div>
