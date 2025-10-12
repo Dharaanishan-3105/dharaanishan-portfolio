@@ -20,9 +20,10 @@ import {
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// Views Counter Component
+// Views Counter Component - Only for About section
 const ViewsCounter = memo(() => {
   const [views, setViews] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     // Get current views from localStorage or initialize
@@ -32,11 +33,48 @@ const ViewsCounter = memo(() => {
     localStorage.setItem('portfolioViews', newViews.toString());
   }, []);
 
+  useEffect(() => {
+    // Check if About section is in viewport
+    const handleScroll = () => {
+      const aboutSection = document.getElementById('About');
+      if (aboutSection) {
+        const rect = aboutSection.getBoundingClientRect();
+        const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+        setIsVisible(isInView);
+      }
+    };
+
+    handleScroll(); // Check initially
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  if (!isVisible) return null;
+
   return (
     <div className="fixed top-20 right-4 z-50 hidden lg:block">
-      <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-full px-4 py-2 flex items-center gap-2 shadow-lg">
-        <Eye className="w-4 h-4 text-purple-400" />
-        <span className="text-white text-sm font-medium">{views.toLocaleString()}</span>
+      <div className="relative group">
+        {/* Animated background glow */}
+        <div className="absolute -inset-2 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+        
+        {/* Main counter container */}
+        <div className="relative bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-full px-4 py-2 flex items-center gap-2 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+          {/* Animated eye icon */}
+          <div className="relative">
+            <Eye className="w-4 h-4 text-purple-400 group-hover:text-pink-400 transition-colors duration-300 animate-pulse" />
+            {/* Floating particles around eye */}
+            <div className="absolute -top-1 -right-1 w-1 h-1 bg-purple-400 rounded-full animate-bounce opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute -bottom-1 -left-1 w-1 h-1 bg-pink-400 rounded-full animate-bounce opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animationDelay: '0.2s'}}></div>
+          </div>
+          
+          {/* Views count with animation */}
+          <span className="text-white text-sm font-medium group-hover:text-purple-200 transition-colors duration-300">
+            {views.toLocaleString()}
+          </span>
+          
+          {/* Subtle shimmer effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
+        </div>
       </div>
     </div>
   );
