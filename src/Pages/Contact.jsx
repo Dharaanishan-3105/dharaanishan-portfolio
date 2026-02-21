@@ -14,11 +14,16 @@ const ContactPage = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [thankYouUrl, setThankYouUrl] = useState("");
 
   useEffect(() => {
     AOS.init({
       once: false,
     });
+  }, []);
+
+  useEffect(() => {
+    setThankYouUrl(`${window.location.origin}/thank-you`);
   }, []);
 
   const handleChange = (e) => {
@@ -140,7 +145,7 @@ const ContactPage = () => {
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission" />
-              <input type="hidden" name="_next" value="https://your-website-url.com/thank-you" />
+              <input type="hidden" name="_next" value={thankYouUrl} />
 
               <div
                 data-aos="fade-up"

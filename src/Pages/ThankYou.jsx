@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const ThankYouPage = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
+    <div className="min-h-screen flex items-center justify-center px-4 bg-[#030014]">
       <div className="text-center">
         <div className="flex justify-center mb-6">
           <CheckCircle className="w-16 h-16 text-[#6366f1]" />

@@ -8,6 +8,7 @@ import AnimatedBackground from "./components/Background";
 import Navbar from "./components/Navbar";
 import Portofolio from "./Pages/Portofolio";
 import ContactPage from "./Pages/Contact";
+import ThankYouPage from "./Pages/ThankYou";
 import ProjectDetails from "./components/ProjectDetail";
 import WelcomeScreen from "./Pages/WelcomeScreen";
 import { AnimatePresence } from 'framer-motion';
@@ -126,7 +127,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
                 <h5 className="text-white font-semibold mb-2">Contact Info</h5>
                 <ul className="space-y-1 text-sm opacity-80">
                   <li>📧 studentdharaan@gmail.com</li>
-                  <li>📍 Trichy, Tamil Nadu, India</li>
+                  <li>📍 chennai, Tamil Nadu, India</li>
                 </ul>
               </div>
             </div>
@@ -168,6 +169,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
+        <Route path="/thank-you" element={<ThankYouPage />} />
         <Route path="/project/:id" element={<ProjectPageLayout />} />
       </Routes>
     </BrowserRouter>
