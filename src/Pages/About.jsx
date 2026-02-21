@@ -383,6 +383,25 @@ const AboutPage = () => {
   // Work Experience Data
   const workExperience = [
     {
+      id: 'data-science-ai-intern',
+      title: 'Data Science & AI Intern',
+      company: 'Besant Technologies',
+      duration: 'Dec 2025 - Present',
+      location: 'Velachery, Chennai, India',
+      type: 'Internship',
+      description: 'Currently undergoing advanced training and practical internship in Data Science and Artificial Intelligence, gaining hands-on experience in data analytics, machine learning, and AI-driven solution development through real-world datasets and industry-oriented workflows.',
+      achievements: [
+        'Strengthening expertise in SQL, Power BI, and Excel for data analysis and business intelligence reporting',
+        'Applying Python for data preprocessing, exploratory data analysis (EDA), and visualization',
+        'Building and evaluating Machine Learning and Deep Learning models using industry-standard methodologies',
+        'Developing end-to-end AI workflows from data preparation to model deployment concepts',
+        'Enhancing analytical thinking, problem-solving skills, and model optimization techniques'
+      ],
+      technologies: ['Python', 'SQL', 'Power BI', 'Excel', 'Machine Learning', 'Deep Learning', 'Artificial Intelligence'],
+      icon: Briefcase,
+      color: 'from-purple-500 to-indigo-500'
+    },
+    {
       id: 'web-dev-intern',
       title: 'Web Development Intern',
       company: 'Sri Sai Tech and HR Solutions',
@@ -423,6 +442,24 @@ const AboutPage = () => {
   // Achievements Data
   const achievements = [
     {
+      id: 'festronix-paper-2025',
+      title: '2nd Prize – Paper Presentation',
+      organization: "K. Ramakrishnan College of Technology, Trichy",
+      date: 'October 2025',
+      category: 'Paper Presentation',
+      description: 'Recognized at FESTRONIX\'2K25 for paper presentation. Paper on NeethiAI – AI-Powered Legal Assistant.',
+      details: [
+        '2nd Prize in Paper Presentation at FESTRONIX\'2K25',
+        'Hosted by K. Ramakrishnan College of Technology, Trichy',
+        'Paper topic: NeethiAI – AI-Powered Legal Assistant'
+      ],
+      technologies: ['AI', 'Legal Tech', 'NeethiAI'],
+      icon: Trophy,
+      color: 'from-violet-500 to-purple-500',
+      year: '2025',
+      month: 10
+    },
+    {
       id: 'science-tech-fest-2025',
       title: '1st Prize - Science Tech Fest 2025 (TechSynergy)',
       organization: 'Dhanalakshmi Srinivasan University, Tiruchirappalli',
@@ -438,7 +475,8 @@ const AboutPage = () => {
       technologies: ['AI', 'Machine Learning', 'Legal Tech', 'Innovation'],
       icon: Trophy,
       color: 'from-amber-500 to-yellow-500',
-      year: '2025'
+      year: '2025',
+      month: 10
     },
     {
       id: 'project-expo-2024',
@@ -454,7 +492,8 @@ const AboutPage = () => {
       technologies: ['Python', 'OpenCV', 'Deep Learning'],
       icon: Trophy,
       color: 'from-yellow-500 to-orange-500',
-      year: '2024'
+      year: '2024',
+      month: 9
     },
     {
       id: 'project-expo-2025',
@@ -462,7 +501,7 @@ const AboutPage = () => {
       organization: 'Indra Ganesan College of Engineering',
       date: 'September 2025',
       category: 'Innovation',
-      description: 'Won First Prize in Project Expo (2025) with "NeethiAI – A GenAI Legal Companion".',
+      description: 'Won First Prize in Project Expo (2025) with "NeethiAI – AI-Powered Legal Assistant".',
       details: [
         'Bilingual legal Q&A and document summarization',
         'Fake notice detection using verified sources',
@@ -470,7 +509,8 @@ const AboutPage = () => {
       technologies: ['Python', 'Flask', 'PostgreSQL'],
       icon: Trophy,
       color: 'from-yellow-500 to-orange-500',
-      year: '2025'
+      year: '2025',
+      month: 9
     },
     {
       id: 'sih-2024-internal-finalist',
@@ -488,7 +528,8 @@ const AboutPage = () => {
       technologies: ['Computer Vision', 'NLP', 'Web Platform', '3D Avatars'],
       icon: Award,
       color: 'from-sky-500 to-indigo-500',
-      year: '2024'
+      year: '2024',
+      month: 0
     },
     {
       id: 'mole-1-0-special-prize-2025',
@@ -506,7 +547,8 @@ const AboutPage = () => {
       technologies: ['Python', 'Computer Vision', 'NLP', 'Web', 'Tamil Sign Language'],
       icon: Award,
       color: 'from-fuchsia-500 to-pink-500',
-      year: '2025'
+      year: '2025',
+      month: 3
     },
     {
       id: 'typewriting-english-2023',
@@ -523,7 +565,8 @@ const AboutPage = () => {
       technologies: ['English Typewriting', 'Documentation', 'Professional Skills'],
       icon: GraduationCap,
       color: 'from-indigo-500 to-purple-500',
-      year: '2023'
+      year: '2023',
+      month: 2
     },
     {
       id: 'sih-2023-internal-finalist',
@@ -542,7 +585,8 @@ const AboutPage = () => {
       technologies: ['Stereo Vision', 'Deep Learning', 'OAK-D', 'Edge AI', 'TTS'],
       icon: Award,
       color: 'from-emerald-500 to-teal-500',
-      year: '2023'
+      year: '2023',
+      month: 0
     },
     {
       id: 'Neotrex-2024',
@@ -560,7 +604,8 @@ const AboutPage = () => {
       technologies: ['Web Development', 'HTML/CSS', 'JavaScript', 'React', 'Node.js'],
       icon: Award,
       color: 'from-green-500 to-teal-500',
-      year: '2024'
+      year: '2024',
+      month: 10
     },
     {
       id: 'srm-competitions-2024',
@@ -578,11 +623,12 @@ const AboutPage = () => {
       technologies: ['Technical Analysis', 'Problem Solving', 'Innovation', 'Creativity'],
       icon: GraduationCap,
       color: 'from-indigo-500 to-purple-500',
-      year: '2024'
+      year: '2024',
+      month: 10
     }
   ];
 
-  // Group achievements by year for timeline view
+  // Group achievements by year, then sort by month (desc) within each year so order is correct
   const achievementsByYear = useMemo(() => {
     const groups = {};
     achievements.forEach((item) => {
@@ -591,10 +637,13 @@ const AboutPage = () => {
       if (!groups[year]) groups[year] = [];
       groups[year].push(item);
     });
-    // Sort years desc and items by title
+    // Sort years desc; within each year sort by month desc (Oct before Sep before Mar), then by title
     return Object.entries(groups)
       .sort((a, b) => Number(b[0]) - Number(a[0]))
-      .map(([year, items]) => [year, items.sort((x, y) => x.title.localeCompare(y.title))]);
+      .map(([year, items]) => [
+        year,
+        items.sort((x, y) => (y.month ?? 0) - (x.month ?? 0) || x.title.localeCompare(y.title))
+      ]);
   }, [achievements]);
 
   // Optimized AOS initialization
@@ -627,7 +676,7 @@ const AboutPage = () => {
       {
         icon: Code,
         color: "from-[#6366f1] to-[#a855f7]",
-        value: 4,
+        value: 10,
         label: "Major Projects",
         description: "AI & ML solutions implemented",
         animation: "fade-right",
@@ -712,8 +761,17 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-              I am a dedicated AI & Data Science professional with a strong foundation in machine learning, data analysis, and web technologies. Currently pursuing B.Tech at Indra Ganesan College of Engineering with an 8.32 CGPA, I specialize in developing intelligent solutions that drive business value. My expertise spans Python, machine learning frameworks, and full-stack development, with a proven track record of delivering innovative projects in hackathons and professional environments. I have successfully completed internships and won multiple awards, including 1st Prize in Project Expo and Webots competitions, demonstrating my commitment to excellence in technology and innovation.
-            </p>
+              I am a final-year B.Tech student specializing in Artificial Intelligence and Data Science at Indra Ganesan College of Engineering with an 8.22 CGPA. I focus on developing data-driven and AI-powered solutions. My academic background, combined with internship experience in Data Science & AI and Web Development, has equipped me to work across the complete development lifecycle — from data preprocessing and model development to deployment and performance optimization. 
+              I have hands-on practical experience in Python, SQL, Flask, Power BI, and machine learning frameworks such as Scikit-learn and TensorFlow, enabling me to design scalable analytical systems and intelligent applications. Through multiple academic projects, technical competitions, and collaborative environments, I have consistently demonstrated strong problem-solving skills, adaptability, and a commitment to delivering high-quality solutions.
+           </p>
+           
+            <p
+              className="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed text-justify pb-4 sm:pb-0"
+              data-aos="fade-right"
+              data-aos-duration="1500"
+            >
+              As a motivated fresher, I am seeking an entry-level opportunity in Data Analytics, Business Intelligence, or AI/ML roles where I can apply my technical foundation, analytical thinking, and continuous learning mindset to contribute effectively to organizational growth.
+           </p>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
               <a

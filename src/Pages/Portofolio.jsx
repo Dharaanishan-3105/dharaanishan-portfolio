@@ -167,6 +167,152 @@ const techStacks = [
   { icon: FaChartLine, language: "Matplotlib" },
 ];
 
+// ——— Edit your projects here: add, remove, update titles, GitHub links, images, and add liveDemoUrl when you have a live demo ———
+const PORTFOLIO_PROJECTS = [
+  {
+    id: "neethi-ai",
+    title: "NeethiAI – AI-Powered Legal Assistant",
+    year: "2026",
+    description: "AI-driven legal assistance platform tailored for Indian citizens, offering bilingual support (Tamil & English) to answer legal queries, analyze legal documents, and detect fraudulent legal notices. Built with a scalable Flask backend, PostgreSQL storage, advanced OCR, and large language model integration for contextual legal guidance.",
+    image: "https://opengraph.githubassets.com/f6563d69971bb2f0dfe681eae2f76e410257399c2111a551ba696b6b1c15e441/Dharaanishan-3105/Neethi-AI",
+    imageAlt: "NeethiAI Legal Assistant Interface",
+    techStack: ["Python", "Flask", "PostgreSQL", "EasyOCR", "HTML", "CSS", "JavaScript"],
+    features: [
+      "AI-powered legal query resolution with contextual responses",
+      "Bilingual support in Tamil and English",
+      "Document upload and analysis (PDF, DOCX, images)",
+      "OCR extraction and fraud detection for legal documents",
+      "Voice input/output with multilingual support",
+      "Responsive, mobile-friendly Progressive Web App design"
+    ],
+    githubUrl: "https://github.com/Dharaanishan-3105/Neethi-AI",
+    liveDemoUrl: "https://neethi-ai-6c31.onrender.com",
+    badges: [],
+    showInInitial: true,
+  },
+  {
+    id: "healthsync-hms",
+    title: "HealthSync – Smart Hospital Management System",
+    year: "2025",
+    description: "Comprehensive AI-powered hospital management system built with Flask and PostgreSQL to streamline healthcare operations. Includes role-based access control, patient records, appointment scheduling, prescriptions, billing, lab results, and predictive analytics.",
+    image: "https://opengraph.githubassets.com/66ee713bc491eb2902e2274ab3ab69e1d34344f21345516bc3727e9573b12ac1/Dharaanishan-3105/Healthsync",
+    imageAlt: "HealthSync Hospital Management System Dashboard",
+    techStack: ["Python", "Flask", "PostgreSQL", "HTML", "CSS", "JavaScript"],
+    features: [
+      "Role-based access control for admin, doctor, nurse, patient & staff",
+      "Patient management with medical history and insurance tracking",
+      "Appointment scheduling and telemedicine support",
+      "Prescription and lab test management",
+      "Billing & payment with insurance claim handling",
+      "AI-powered predictive analytics and smart scheduling"
+    ],
+    githubUrl: "https://github.com/Dharaanishan-3105/Healthsync",
+    liveDemoUrl: null,
+    badges: [],
+    showInInitial: true,
+  },
+  {
+    id: "parkaro-smart-parking",
+    title: "ParKaro – Smart Urban Parking System",
+    year: "2026",
+    description: "Web-based smart parking management platform designed to improve parking efficiency in busy cities. Users can search and reserve parking slots in real time, make online payments, and manage bookings while admins can configure locations, pricing rules, and analytics dashboards for operational insights.",
+    image: "https://opengraph.githubassets.com/d9a871a903cd97c1c95750517669f16fa651e058d826aeb91d3952802aef2473/Dharaanishan-3105/ParKaro",
+    imageAlt: "ParKaro Smart Parking Management System",
+    techStack: ["Python", "Django", "MySQL", "HTML", "CSS", "JavaScript"],
+    features: [
+      "Real-time parking slot discovery and reservation",
+      "Secure user authentication and vehicle profile management",
+      "Online payments and QR-based entry/exit logging",
+      "Dynamic pricing and refund policy configuration",
+      "Admin dashboard with revenue & utilization analytics",
+      "Booking history, extension, cancellation, and CSV export"
+    ],
+    githubUrl: "https://github.com/Dharaanishan-3105/ParKaro",
+    liveDemoUrl: null,
+    badges: [],
+    showInInitial: true,
+  },
+  {
+    id: "facesense",
+    title: "FaceSense – Intelligent Face Recognition Attendance System",
+    year: "2025",
+    description: "AI-powered attendance system that uses real-time face recognition to automatically record and manage attendance with secure structured storage. Built with Python, OpenCV, Flask backend and an interactive React frontend.",
+    image: "https://opengraph.githubassets.com/b1769c019163fc56bb4152f5233fbcba2dcf79d40336f8559aab2ca79cc066c0/Dharaanishan-3105/FaceSense",
+    imageAlt: "FaceSense Intelligent Face Recognition Attendance System",
+    techStack: ["Python", "OpenCV", "Flask", "React", "MySQL"],
+    features: [
+      "Real-time face recognition for attendance tracking",
+      "Role-based dashboards for admin, teachers, and kiosk",
+      "Secure SQL-based data storage",
+      "Register students and staff with detailed profiles",
+      "Campus boundary checks for valid attendance",
+      "Export attendance reports to Excel"
+    ],
+    githubUrl: "https://github.com/Dharaanishan-3105/FaceSense",
+    liveDemoUrl: null,
+    badges: [],
+    showInInitial: true,
+  },
+  {
+    id: "firealert",
+    title: "FireAlert – Real-Time Fire Detection System",
+    year: "2024",
+    description: "AI-powered real-time fire detection system built with a custom-trained deep learning model. The system analyzes live camera feeds to detect flames and smoke, triggers instant alerts, and provides a web-based monitoring dashboard using Streamlit for real-time visualization and control.",
+    image: "https://opengraph.githubassets.com/60b0c517f34d6aaa3016f1c15aca290ea799cf5da8bf523a90e30c2c96a3ef74/Dharaanishan-3105/FireAlert",
+    imageAlt: "FireAlert Real-Time Fire Detection System Dashboard",
+    techStack: ["Python", "Deep Learning", "OpenCV", "Streamlit", "Machine Learning"],
+    features: [
+      "Custom-trained fire detection model (not color-based)",
+      "Real-time video stream analysis",
+      "Instant alert triggering on fire detection",
+      "Web-based monitoring dashboard using Streamlit",
+      "Detection logging for monitoring and analysis",
+      "Designed for CCTV-based deployment in homes, offices, and industries"
+    ],
+    githubUrl: "https://github.com/Dharaanishan-3105/FireAlert",
+    liveDemoUrl: "https://firealert-dharaanishan.streamlit.app/",
+    badges: [],
+    showInInitial: true,
+  },
+  {
+    id: "resultinsight",
+    title: "ResultInsight – Student Result Analyzer",
+    year: "2026",
+    description: "Interactive web app that analyzes student result CSV files to produce visual insights, predictive arrear risk scoring, and downloadable PDF reports. Built with Streamlit, Plotly charts and logistic regression to help educators quickly assess performance trends.",
+    image: "https://opengraph.githubassets.com/ffa7569d2d29ea71abb60acf1d805ff7333d674a3e316933489641fe3beff4af/Dharaanishan-3105/ResultInsight",
+    imageAlt: "ResultInsight Student Result Analyzer Dashboard",
+    techStack: ["Python", "Streamlit", "Pandas", "Plotly", "scikit-learn"],
+    features: [
+      "Upload student result CSV for instant insights",
+      "Top performer rankings and subject-wise analysis",
+      "Interactive Plotly charts for distribution and arrears",
+      "Arrear-risk prediction using logistic regression",
+      "Generate and download PDF summary reports"
+    ],
+    githubUrl: "https://github.com/Dharaanishan-3105/ResultInsight",
+    liveDemoUrl: "https://resultinsight-dharaanishan.streamlit.app/",
+    badges: [],
+    showInInitial: true,
+  },
+
+
+  // Add more projects below; set showInInitial: false to show only when "See More" is clicked
+  // {
+  //   id: "object-detection",
+  //   title: "Object Detection Mobile App",
+  //   year: "2025",
+  //   description: "Real-time mobile app for object detection with camera input. Provides bounding boxes, confidence scores, and Text-to-Speech feedback, optimized for Android devices.",
+  //   image: "/projects/object-detection.png",
+  //   imageAlt: "Object Detection App",
+  //   techStack: ["Python", "TensorFlow Lite", "Android Studio", "Gradle"],
+  //   features: ["Realtime bounding boxes", "TTS feedback", "Device optimized"],
+  //   githubUrl: "https://github.com/Dharaanishan-3105/Object-Detection-Mobile-App",
+  //   liveDemoUrl: null,
+  //   badges: [],
+  //   showInInitial: false,
+  // },
+];
+
 export default function FullWidthTabs() {
   const theme = useTheme();
   const [value, setValue] = useState(0);
@@ -256,9 +402,21 @@ export default function FullWidthTabs() {
     }
   }, []);
 
-  const displayedProjects = showAllProjects ? projects : projects.slice(0, initialItems);
+  const displayedProjectsFromData = showAllProjects ? PORTFOLIO_PROJECTS : PORTFOLIO_PROJECTS.slice(0, initialItems);
   const displayedCertificates = showAllCertificates ? certificates : certificates.slice(0, initialItems);
   const displayedTechStack = showAllTechStack ? techStacks : techStacks.slice(0, 12);
+
+  const openProjectModal = (project) => {
+    setActiveProject({
+      Title: project.title,
+      Description: project.description,
+      Img: project.image,
+      TechStack: project.techStack,
+      Features: project.features,
+      Github: project.githubUrl,
+      LiveDemoUrl: project.liveDemoUrl || null,
+    });
+  };
 
   return (
     <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden" id="Portofolio">
@@ -374,211 +532,67 @@ export default function FullWidthTabs() {
             <div className="container mx-auto flex justify-center items-center overflow-hidden">
               <div className="w-full">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
-                  {/* NeethiAI - Legal AI Chatbot */}
-                  <div
-                    data-aos="fade-up-right"
-                    data-aos-duration="1000"
-                  >
-                    <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
-                      <div className="relative">
-                        <img src="/projects/neethi-ai.png" alt="NeethiAI" className="w-full h-40 object-cover" />
-                        <div className="absolute top-3 right-3 flex gap-2">
-                          <span className="px-2 py-0.5 text-[10px] rounded-full bg-pink-500/20 text-pink-300 border border-pink-400/30">FEATURED</span>
-                          <span className="px-2 py-0.5 text-[10px] rounded-full bg-green-500/20 text-green-300 border border-green-400/30">NEW</span>
-                        </div>
-                      </div>
-                      <div className="p-6">
-                        <div className="flex items-center justify-between mb-2">
-                          <h3 className="text-xl font-bold text-white">NeethiAI – Legal AI Chatbot</h3>
-                          <span className="text-[11px] text-gray-300 bg-white/5 rounded-full px-2 py-0.5 border border-white/10">2024 – 2025</span>
-                        </div>
-                        <p className="text-gray-300 text-sm mb-4">A GenAI-based legal assistant that answers legal queries in English/Tamil, summarizes legal documents, detects fake notices, and provides tax/legal guidance using verified government sources.</p>
-                        <div className="flex flex-wrap gap-2 mb-5">
-                          <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">Python</span>
-                          <span className="px-2 py-1 bg-green-500/20 text-green-300 text-xs rounded">Flask</span>
-                          <span className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded">PostgreSQL</span>
-                          <span className="px-2 py-1 bg-orange-500/20 text-orange-300 text-xs rounded">HTML/CSS</span>
-                        </div>
-                        <div className="flex items-center justify-between">
-                          <button onClick={() => setActiveProject({
-                            Title: 'NeethiAI – Legal AI Chatbot',
-                            Description: 'A GenAI-based legal assistant that answers legal queries in English/Tamil, summarizes legal documents, detects fake notices, and provides tax/legal guidance using verified government sources.',
-                            Img: '/projects/neethi-ai.png',
-                            TechStack: ['Python','Flask','PostgreSQL','HTML/CSS'],
-                            Features: [
-                              'Bilingual Q&A (English/Tamil)',
-                              'Legal document summarization',
-                              'Fake notice detection',
-                              'Government-source backed answers'
-                            ],
-                            Github: 'https://github.com/Dharaanishan-3105/NeethiAI-Legal-Chatbot'
-                          })} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-200 text-sm border border-white/10">Project details</button>
-                          <a href="https://github.com/Dharaanishan-3105/NeethiAI-Legal-Chatbot" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm font-medium">View Project →</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* HealthSync – Hospital Management System */}
-                  <div
-                    data-aos="fade-up"
-                    data-aos-duration="1200"
-                  >
-                    <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
-                      <div className="relative">
-                        <img src="/projects/healthsync.png" alt="HealthSync" className="w-full h-40 object-cover" />
-                      </div>
-                      <div className="p-6">
-                        <div className="flex items-center justify-between mb-2">
-                          <h3 className="text-xl font-bold text-white">HealthSync – Hospital Management System</h3>
-                          <span className="text-[11px] text-gray-300 bg-white/5 rounded-full px-2 py-0.5 border border-white/10">2024</span>
-                        </div>
-                        <p className="text-gray-300 text-sm mb-4">A web-based platform to manage patient records, doctor appointments, and prescriptions securely. Automates hospital operations with role-based access for patients, doctors, and staff.</p>
-                        <div className="flex flex-wrap gap-2 mb-5">
-                          <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">Python</span>
-                          <span className="px-2 py-1 bg-green-500/20 text-green-300 text-xs rounded">Flask</span>
-                          <span className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded">PostgreSQL</span>
-                          <span className="px-2 py-1 bg-pink-500/20 text-pink-300 text-xs rounded">Machine Learning</span>
-                        </div>
-                        <div className="flex items-center justify-between">
-                          <button onClick={() => setActiveProject({
-                            Title: 'HealthSync – Hospital Management System',
-                            Description: 'A web-based platform to manage patient records, doctor appointments, and prescriptions securely. Automates hospital operations with role-based access for patients, doctors, and staff.',
-                            Img: '/projects/healthsync.png',
-                            TechStack: ['Python','Flask','PostgreSQL','Machine Learning'],
-                            Features: ['Patient management','Appointments','Prescriptions','Role-based access'],
-                            Github: 'https://github.com/Dharaanishan-3105/HealthSync-Hospital-Management'
-                          })} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-200 text-sm border border-white/10">Project details</button>
-                          <a href="https://github.com/Dharaanishan-3105/HealthSync-Hospital-Management" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm font-medium">View Project →</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Fire Detection & Alert System */}
-                  <div
-                    data-aos="fade-up-left"
-                    data-aos-duration="1000"
-                  >
-                    <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
-                      <div className="relative">
-                        <img src="/projects/fire-detection.png" alt="Fire Detection & Alert System" className="w-full h-40 object-cover" />
-                      </div>
-                      <div className="p-6">
-                        <div className="flex items-center justify-between mb-2">
-                          <h3 className="text-xl font-bold text-white">Fire Detection & Alert System</h3>
-                          <span className="text-[11px] text-gray-300 bg-white/5 rounded-full px-2 py-0.5 border border-white/10">2024</span>
-                        </div>
-                        <p className="text-gray-300 text-sm mb-4">Real-time AI-based system that detects fire through camera feed and instantly triggers an audible alarm and sends email alerts. Logs all detection events and provides configurable sensitivity for flexible deployment in homes, offices, or industries.</p>
-                        <div className="flex flex-wrap gap-2 mb-5">
-                          <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">Python</span>
-                          <span className="px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded">OpenCV</span>
-                          <span className="px-2 py-1 bg-pink-500/20 text-pink-300 text-xs rounded">Deep Learning</span>
-                        </div>
-                        <div className="flex items-center justify-between">
-                          <button onClick={() => setActiveProject({
-                            Title: 'Fire Detection & Alert System',
-                            Description: 'Real-time AI-based system that detects fire through camera feed and instantly triggers an audible alarm and sends email alerts. Logs all detection events and provides configurable sensitivity for flexible deployment in homes, offices, or industries.',
-                            Img: '/projects/fire-detection.png',
-                            TechStack: ['Python','OpenCV','Deep Learning'],
-                            Features: [
-                              'Real-time fire detection from camera stream',
-                              'Audible alarm and email notification',
-                              'Event logging with timestamps',
-                              'Configurable sensitivity for different environments'
-                            ],
-                            Github: 'https://github.com/Dharaanishan-3105/Fire-Detection-Alert-System'
-                          })} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-200 text-sm border border-white/10">Project details</button>
-                          <a href="https://github.com/Dharaanishan-3105/Fire-Detection-Alert-System" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm font-medium">View Project →</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Face Recognition Attendance System - 4th project */}
-                  <div
-                    data-aos="fade-up-right"
-                    data-aos-duration="1000"
-                  >
-                    <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
-                      <img src="/projects/attendance.png" alt="Face Recognition Attendance" className="w-full h-40 object-cover" />
-                      <div className="mb-4">
-                        <div className="flex items-center justify-between mb-2 px-6 mt-4">
-                          <h3 className="text-xl font-bold text-white">Face Recognition Attendance System</h3>
-                          <span className="text-[11px] text-gray-300 bg-white/5 rounded-full px-2 py-0.5 border border-white/10">2024</span>
-                        </div>
-                        <p className="text-gray-300 text-sm mb-4 px-6">
-                          Automated student attendance using real-time face detection and recognition. Marks IN/OUT time, stores records in a database, and exports daily reports to Excel.
-                        </p>
-                        <div className="flex flex-wrap gap-2 mb-4 px-6">
-                          <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">Python</span>
-                          <span className="px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded">OpenCV</span>
-                          <span className="px-2 py-1 bg-yellow-500/20 text-yellow-300 text-xs rounded">SQLite</span>
-                        </div>
-                        <div className="px-6 pb-6 flex items-center justify-between">
-                          <button onClick={() => setActiveProject({
-                            Title: 'Face Recognition Attendance System',
-                            Description: 'Automated student attendance using real-time face detection and recognition. Marks IN/OUT time, stores records in a database, and exports daily reports to Excel.',
-                            Img: '/projects/attendance.png',
-                            TechStack: ['Python','OpenCV','SQLite'],
-                            Features: ['Real-time detection','Attendance logs','Excel export'],
-                            Github: 'https://github.com/Dharaanishan-3105/Face-Recognition-Attendance'
-                          })} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-200 text-sm border border-white/10">Project details</button>
-                          <a href="https://github.com/Dharaanishan-3105/Face-Recognition-Attendance" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm font-medium">View Project →</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Show more projects when expanded */}
-                  {showAllProjects && (
-                    <>
-                      {/* Object Detection Mobile App */}
-                      <div
-                        data-aos="fade-up-left"
-                        data-aos-duration="1200"
-                      >
-                        <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
-                          <img src="/projects/object-detection.png" alt="Object Detection App" className="w-full h-40 object-cover" />
-                          <div className="mb-4">
-                            <div className="flex items-center justify-between mb-2 px-6 mt-4">
-                              <h3 className="text-xl font-bold text-white">Object Detection Mobile App</h3>
-                              <span className="text-[11px] text-gray-300 bg-white/5 rounded-full px-2 py-0.5 border border-white/10">2025</span>
+                  {displayedProjectsFromData.map((project, index) => (
+                    <div
+                      key={project.id}
+                      data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                      data-aos-duration={index % 3 === 1 ? "1200" : "1000"}
+                    >
+                      <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
+                        <div className="relative">
+                          <img src={project.image} alt={project.imageAlt || project.title} className="w-full h-52 object-contain bg-white/5" />
+                          {project.badges && project.badges.length > 0 && (
+                            <div className="absolute top-3 right-3 flex gap-2">
+                              {project.badges.map((badge) => (
+                                <span
+                                  key={badge}
+                                  className={`px-2 py-0.5 text-[10px] rounded-full border ${
+                                    badge === "FEATURED" ? "bg-pink-500/20 text-pink-300 border-pink-400/30" : "bg-green-500/20 text-green-300 border-green-400/30"
+                                  }`}
+                                >
+                                  {badge}
+                                </span>
+                              ))}
                             </div>
-                            <p className="text-gray-300 text-sm mb-4 px-6">
-                              Real-time mobile app for object detection with camera input. Provides bounding boxes, confidence scores, and Text-to-Speech feedback, optimized for Android devices.
-                            </p>
-                            <div className="flex flex-wrap gap-2 mb-4 px-6">
-                              <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">Python</span>
-                              <span className="px-2 py-1 bg-orange-500/20 text-orange-300 text-xs rounded">TensorFlow Lite</span>
-                              <span className="px-2 py-1 bg-green-500/20 text-green-300 text-xs rounded">Android Studio</span>
-                              <span className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded">Gradle</span>
-                            </div>
-                            <div className="px-6 pb-6 flex items-center justify-between">
-                              <button onClick={() => setActiveProject({
-                                Title: 'Object Detection Mobile App',
-                                Description: 'Real-time mobile app for object detection with camera input. Provides bounding boxes, confidence scores, and Text-to-Speech feedback, optimized for Android devices.',
-                                Img: '/projects/object-detection.png',
-                                TechStack: ['Python','TensorFlow Lite','Android Studio','Gradle'],
-                                Features: ['Realtime bounding boxes','TTS feedback','Device optimized'],
-                                Github: 'https://github.com/Dharaanishan-3105/Object-Detection-Mobile-App'
-                              })} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-200 text-sm border border-white/10">Project details</button>
-                              <a href="https://github.com/Dharaanishan-3105/Object-Detection-Mobile-App" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm font-medium">View Project →</a>
+                          )}
+                        </div>
+                        <div className="p-6">
+                          <div className="flex items-center justify-between mb-2">
+                            <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                            <span className="text-[11px] text-gray-300 bg-white/5 rounded-full px-2 py-0.5 border border-white/10">{project.year}</span>
+                          </div>
+                          <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+                          <div className="flex flex-wrap gap-2 mb-5">
+                            {project.techStack.map((tech) => (
+                              <span key={tech} className="px-2 py-1 bg-white/10 text-gray-300 text-xs rounded border border-white/10">{tech}</span>
+                            ))}
+                          </div>
+                          <div className="flex flex-wrap items-center gap-2 justify-between">
+                            <button onClick={() => openProjectModal(project)} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-200 text-sm border border-white/10">Project details</button>
+                            <div className="flex items-center gap-2">
+                              {project.liveDemoUrl && (
+                                <a href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-green-600/20 text-green-300 text-sm font-medium border border-green-400/30 hover:bg-green-600/30">
+                                  Live Demo
+                                </a>
+                              )}
+                              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm font-medium">View Project →</a>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </>
-                  )}
+                    </div>
+                  ))}
                 </div>
 
-                {/* See More Button for Projects */}
-                <div className="flex justify-center mt-8">
-                  <ToggleButton 
-                    onClick={() => toggleShowMore('projects')} 
-                    isShowingMore={showAllProjects} 
-                  />
-                </div>
+                {/* See More Button for Projects - only when there are more than initial count */}
+                {PORTFOLIO_PROJECTS.length > initialItems && (
+                  <div className="flex justify-center mt-8">
+                    <ToggleButton 
+                      onClick={() => toggleShowMore('projects')} 
+                      isShowingMore={showAllProjects} 
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </TabPanel>
@@ -799,7 +813,7 @@ export default function FullWidthTabs() {
                 <h3 className="text-2xl font-bold text-white">{activeProject.Title}</h3>
                 <button className="px-3 py-1 rounded-lg bg-white/10 text-gray-300 hover:bg-white/20" onClick={()=>setActiveProject(null)}>Close</button>
               </div>
-              <img src={activeProject.Img} alt={activeProject.Title} className="w-full rounded-xl border border-white/10 mb-6" />
+              <img src={activeProject.Img} alt={activeProject.Title} className="w-full max-h-72 object-contain rounded-xl border border-white/10 mb-6 bg-white/5" />
               <p className="text-gray-300 mb-6">{activeProject.Description}</p>
               <div className="grid sm:grid-cols-2 gap-6 mb-6">
                 <div>
@@ -819,7 +833,10 @@ export default function FullWidthTabs() {
                   </div>
                 </div>
               </div>
-              <div className="flex justify-end gap-3">
+              <div className="flex flex-wrap justify-end gap-3">
+                {activeProject.LiveDemoUrl && (
+                  <a href={activeProject.LiveDemoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-green-600/20 text-green-200 border border-green-400/30 hover:bg-green-600/30">Live Demo <ExternalLink className="w-4 h-4"/></a>
+                )}
                 <a href={activeProject.Github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600/20 text-indigo-200 border border-indigo-400/30 hover:bg-indigo-600/30">View Project <ExternalLink className="w-4 h-4"/></a>
                 <button className="px-4 py-2 rounded-lg bg-white/10 text-gray-200 hover:bg-white/20" onClick={()=>setActiveProject(null)}>Close</button>
               </div>
