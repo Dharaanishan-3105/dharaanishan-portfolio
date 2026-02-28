@@ -4,7 +4,7 @@ This is my personal portfolio website showcasing my Data Science, AI, Machine Le
 
 **About Me:**  
 - B.Tech AI & Data Science Student at Indra Ganesan College of Engineering  
-- Current CGPA: 8.32  
+- Current CGPA: 8.22  
 - 20+ Professional Certificates in AI, ML, and Web Development  
 - Winner of multiple hackathons and project competitions  
 - Specialized in Data Analysis, Machine Learning, and Business Intelligence  
@@ -20,7 +20,7 @@ This is my personal portfolio website showcasing my Data Science, AI, Machine Le
 - SweetAlert2  
 
 **Website Link:**  
-🚀 [Live Portfolio](https://your-portfolio.vercel.app) - Coming Soon!  
+🚀 [Live Portfolio](https://dharaanishan-portfolio.vercel.app/) 
 📧 **Contact:** studentdharaan@gmail.com  
 🔗 **LinkedIn:** [Dharaanishan Selvendran](https://www.linkedin.com/in/dharaanishan-selvendran-4d312005)  
 
