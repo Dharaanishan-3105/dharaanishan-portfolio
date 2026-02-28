@@ -174,7 +174,7 @@ const PORTFOLIO_PROJECTS = [
     title: "NeethiAI – AI-Powered Legal Assistant",
     year: "2026",
     description: "AI-driven legal assistance platform tailored for Indian citizens, offering bilingual support (Tamil & English) to answer legal queries, analyze legal documents, and detect fraudulent legal notices. Built with a scalable Flask backend, PostgreSQL storage, advanced OCR, and large language model integration for contextual legal guidance.",
-    image: "https://opengraph.githubassets.com/f6563d69971bb2f0dfe681eae2f76e410257399c2111a551ba696b6b1c15e441/Dharaanishan-3105/Neethi-AI",
+    image: "https://opengraph.githubassets.com/9d4e186d8f83a24df83b1c3eb88c02aff2fc8471b76763ba256baaf2d190afd0/Dharaanishan-3105/Neethi-AI",
     imageAlt: "NeethiAI Legal Assistant Interface",
     techStack: ["Python", "Flask", "PostgreSQL", "EasyOCR", "HTML", "CSS", "JavaScript"],
     features: [
@@ -189,6 +189,27 @@ const PORTFOLIO_PROJECTS = [
     liveDemoUrl: "https://neethi-ai-6c31.onrender.com",
     badges: [],
     showInInitial: true,
+  },
+  {
+  id: "silentvoice-ai",
+  title: "SilentVoice – AI Sign Language Communication Platform",
+  year: "2026",
+  description: "Web-based AI communication platform that bridges the gap between spoken language and sign language in real time. SilentVoice enables two-way translation between speech and three sign languages (ASL, ISL, and TSL) using computer vision and hybrid deep learning models, fostering inclusive communication for deaf and hearing communities.",
+  image: "https://opengraph.githubassets.com/eaa2474adf07e60e6abd9887f44d89b272fc846d1cfea3a4aeb435e102c8c164/Dharaanishan-3105/SilentVoice",
+  imageAlt: "SilentVoice AI Sign Language Communication Interface",
+  techStack: ["Next.js", "Python", "FastAPI", "PyTorch", "MediaPipe", "TailwindCSS"],
+  features: [
+    "Real-time speech-to-sign and sign-to-speech translation",
+    "Tri-lingual support for ASL (American), ISL (Indian), and TSL (Tamil) sign languages",
+    "Client-side hand landmark extraction using MediaPipe for privacy and low latency",
+    "Hybrid Transformer + BiLSTM deep learning model for dynamic sign recognition",
+    "Emergency phrase detection for offline critical communication",
+    "Interactive learning modules with gamified feedback"
+  ],
+  githubUrl: "https://github.com/Dharaanishan-3105/SilentVoice",
+  liveDemoUrl: null,
+  badges: [],
+  showInInitial: true
   },
   {
     id: "healthsync-hms",
@@ -252,6 +273,27 @@ const PORTFOLIO_PROJECTS = [
     liveDemoUrl: null,
     badges: [],
     showInInitial: true,
+  },
+  {
+  id: "edulytics-analytics",
+  title: "EDUlytics – Student Performance Analytics System",
+  year: "2026",
+  description: "Advanced educational analytics platform that integrates a robust database design with interactive visualizations to analyze student performance, attendance, and academic trends. The system demonstrates full-stack data engineering skills, from relational database normalization and business logic processing to an interactive Streamlit dashboard for insights and decision support.",
+  image: "https://opengraph.githubassets.com/84cab72ac4f5038ac00b038d473b867d792ab2c8ffe9c09dc0e1252a8402ab54/Dharaanishan-3105/EDUlytics",
+  imageAlt: "EDUlytics Student Performance Analytics Dashboard",
+  techStack: ["Python", "MySQL", "Streamlit", "SQL Analytics", "Data Visualization"],
+  features: [
+    "Advanced normalized database architecture with constraints and procedures",
+    "Automated GPA calculation and student risk identification",
+    "Real-time performance dashboards with interactive visual analytics",
+    "Transcript lookup and detailed academic history views",
+    "Attendance vs. performance correlation analysis",
+    "Comprehensive analytical reports for departments and students"
+  ],
+  githubUrl: "https://github.com/Dharaanishan-3105/EDUlytics",
+  liveDemoUrl: "https://edulytics-dharaanishan.streamlit.app/",
+  badges: [],
+  showInInitial: true,
   },
   {
     id: "firealert",
